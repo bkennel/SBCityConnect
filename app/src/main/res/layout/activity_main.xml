@@ -8,10 +8,81 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mobilend.sbcityconnect.MainActivity">
+    tools:context="mobilend.sbcityconnect.MainActivity"
+    android:background="@android:color/black" >
+
+    <Button
+        android:text="BUSINESS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/businessButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorBusiness"
+        android:autoText="true"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        android:layout_below="@+id/workButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="LIFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lifeButton"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="131dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorLife"
+        android:layout_alignParentEnd="true"
+        android:autoText="true"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        android:onClick="goToLife" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="welcome to" />
+
+    <Button
+        android:text="WORK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/workButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorWork"
+        android:autoText="true"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        android:layout_below="@+id/lifeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="GOVERNMENT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/governmentButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorGovernment"
+        android:autoText="true"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/businessButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

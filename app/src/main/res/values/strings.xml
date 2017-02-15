@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">SBCityConnect</string>
+    <string-array name="life_array">
+        <item>calendar</item>
+        <item>city assistance</item>
+        <item>e-payment</item>
+        <item>mobile-bank</item>
+        <item>money management</item>
+        <item>settings</item>
+    </string-array>
+    <string-array name="moneymanagement_array">
+        <item>add new account</item>
+        <item>maintain accounts</item>
+        <item>budget tracker</item>
+        <item>saving goals</item>
+        <item>find assistance</item>
+    </string-array>
 </resources>
