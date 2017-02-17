@@ -85,4 +85,23 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:text="LOGIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/colorLogin"
+        android:textColor="@color/colorLoginText"
+        android:autoText="true"
+        android:textAlignment="textStart"
+        android:textSize="30sp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/governmentButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="goToLogin"/>
+
 </RelativeLayout>

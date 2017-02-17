@@ -7,4 +7,6 @@
     <color name="colorWork">#337fc2</color>
     <color name="colorBusiness">#26a69a</color>
     <color name="colorGovernment">#19c5a5</color>
+    <color name="colorLogin">#FFFFFF</color>
+    <color name="colorLoginText">#FF0000</color>
 </resources>
