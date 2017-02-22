@@ -51,7 +51,7 @@
         android:id="@+id/mainmessage"
         android:layout_below="@+id/nameTitle"
         android:textColor="@color/colorBusiness"
-        android:textSize="25sp"
+        android:textSize="24sp"
         android:background="@android:color/background_light" />
 
     <TextView
@@ -61,7 +61,21 @@
         android:id="@+id/submessage"
         android:layout_below="@+id/mainmessage"
         android:textColor="@android:color/darker_gray"
-        android:textSize="25sp"
+        android:textSize="24sp"
         android:background="@android:color/background_light" />
+
+    <Button
+        android:text="Calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submessage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/calendarButton"
+        android:background="@color/colorMenu"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:onClick="goToCalendar" />
 
 </RelativeLayout>
