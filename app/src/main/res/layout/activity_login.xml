@@ -88,9 +88,9 @@
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="#4F4F4F"
-                    android:color="#FFFFFF"
-                    android:singleLine="true" />
+                    android:textColor="@android:color/darker_gray"
+                    android:singleLine="true"
+                    android:background="@android:color/background_light" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -108,9 +108,9 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:textColor="#4F4F4F"
-                    android:color="#FFFFFF"
-                    android:singleLine="true" />
+                    android:textColor="@android:color/darker_gray"
+                    android:singleLine="true"
+                    android:background="@android:color/background_light" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -122,7 +122,7 @@
                 android:layout_marginTop="150dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold"
-                android:layout_alignTop="@+id/password"/>
+                android:layout_below="@+id/password"/>
 
         </LinearLayout>
     </ScrollView>

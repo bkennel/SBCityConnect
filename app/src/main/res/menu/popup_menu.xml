@@ -2,21 +2,33 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
         android:id="@+id/life"
-        android:title="LIFE" />
+        android:title="LIFE"
+        android:color="@color/colorMenu"
+        android:textColor="@color/colorMenuText" />
     <item
         android:id="@+id/work"
-        android:title="WORK" />
+        android:title="WORK"
+        android:color="@color/colorMenu"
+        android:textColor="@color/colorMenuText" />
     <item
         android:id="@+id/business"
-        android:title="BUSINESS" />
+        android:title="BUSINESS"
+        android:color="@color/colorMenu"
+        android:textColor="@color/colorMenuText"/>
     <item
         android:id="@+id/government"
-        android:title="GOVERNMENT" />
+        android:title="GOVERNMENT"
+        android:color="@color/colorMenu"
+        android:textColor="@color/colorMenuText"/>
     <item
         android:id="@+id/settings"
-        android:title="SETTINGS" />
+        android:title="SETTINGS"
+        android:color="@color/colorMenu"
+        android:textColor="@color/colorMenuText"/>
     <item
         android:id="@+id/logout"
-        android:title="LOGOUT" />
+        android:title="LOGOUT"
+        android:color="@color/colorLogin"
+        android:textColor="@color/colorLoginText"/>
 
 </menu>
