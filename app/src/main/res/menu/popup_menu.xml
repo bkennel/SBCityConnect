@@ -4,12 +4,30 @@
         android:id="@+id/life"
         android:title="LIFE"
         android:color="@color/colorMenu"
-        android:textColor="@color/colorMenuText" />
+        android:textColor="@color/colorMenuText">
+        <menu>
+            <item
+                android:id="@+id/calendar"
+                android:title="Calendar" />
+            <item
+                android:id="@+id/payments"
+                android:title="Payments" />
+        </menu>
+    </item>
     <item
         android:id="@+id/work"
         android:title="WORK"
         android:color="@color/colorMenu"
-        android:textColor="@color/colorMenuText" />
+        android:textColor="@color/colorMenuText">
+        <menu>
+            <item
+                android:id="@+id/openPositions"
+                android:title="Open Positions" />
+            <item
+                android:id="@+id/jobResources"
+                android:title="Job Resources" />
+        </menu>
+    </item>
     <item
         android:id="@+id/business"
         android:title="BUSINESS"
