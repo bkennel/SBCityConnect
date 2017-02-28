@@ -8,6 +8,9 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -31,6 +34,9 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -42,6 +48,13 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
     }
 
     public boolean onMenuItemClick(MenuItem item){
@@ -70,14 +83,23 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return true;
             case R.id.logout:
                 startActivity(new Intent(this, MainActivity.class));
+                return true;
 
         }
         return false;
     }
 
-    public void goToCalendar(){
-        Intent intent = new Intent(this, CalendarActivity.class);
-        startActivity(intent);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.menuIcon:
+                PopupMenu popup = new PopupMenu(HomeActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(HomeActivity.this);
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                popup.show();
+                return true;
+        }
+        return false;
     }
 
     public void goToCalendar(View view){

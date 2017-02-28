@@ -11,25 +11,80 @@
     tools:context="mobilend.sbcityconnect.HomeActivity"
     android:background="@android:color/black" >
 
-    <TextView
-        android:text="Welcome back"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:id="@+id/welcomeTitle"
-        android:layout_centerHorizontal="true"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorMenu"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="Calendar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/menuButton"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"/>
+        android:id="@+id/calendarButton"
+        android:background="@color/colorMenu"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:onClick="goToCalendar"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You saved $365 this year"
+        android:id="@+id/submessage"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        android:background="@android:color/background_light"
+        android:layout_above="@+id/calendarButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:color="@android:color/white"
+        android:text="CONGRATULATIONS"
+        android:id="@+id/mainmessage"
+        android:textColor="@color/colorBusiness"
+        android:textSize="24sp"
+        android:background="@android:color/background_light"
+        android:layout_above="@+id/submessage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="JANE!"
         android:id="@+id/nameTitle"
-        android:layout_below="@+id/welcomeTitle"
         android:textSize="30sp"
-        android:textColor="@color/colorBusiness"/>
+        android:textColor="@color/colorBusiness"
+        android:layout_above="@+id/mainmessage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
+
+    <TextView
+        android:text="Welcome back"
+        android:layout_width="match_parent"
+        android:id="@+id/welcomeTitle"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_above="@+id/nameTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -39,43 +94,9 @@
         android:src="@drawable/menu_icon"
         android:width="50dp"
         android:height="50dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:color="@android:color/white"
-        android:text="CONGRATULATIONS"
-        android:id="@+id/mainmessage"
-        android:layout_below="@+id/nameTitle"
-        android:textColor="@color/colorBusiness"
-        android:textSize="24sp"
-        android:background="@android:color/background_light" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="You saved $365 this year"
-        android:id="@+id/submessage"
-        android:layout_below="@+id/mainmessage"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="24sp"
-        android:background="@android:color/background_light" />
-
-    <Button
-        android:text="Calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/submessage"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp"
-        android:id="@+id/calendarButton"
-        android:background="@color/colorMenu"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        android:onClick="goToCalendar" />
 
 </RelativeLayout>
