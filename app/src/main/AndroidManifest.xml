@@ -37,8 +37,11 @@
         <activity
             android:name=".CalendarActivity"
             android:label="CALENDAR"
-            android:parentActivityName=".HomeActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EPaymentActivity" />
+        <activity android:name=".PayItForward1Activity" />
+        <activity android:name=".MakeAPayment1Activity"></activity>
     </application>
 
 </manifest>

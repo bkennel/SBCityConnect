@@ -19,6 +19,11 @@
     <color name="colorLightGreen">#9FD8CE</color>
     <color name="colorMaroon">#96031E</color>
     <color name="colorBackgroundDarkBlue">#002c44</color>
+    <color name="colorDarkGray">#2e2e2f</color>
+    <color name="colorMediumGray">#4f4e4e</color>
+    <color name="colorLightGray">#c9cacc</color>
+    <color name="colorWhiteGray">#f8f8f8</color>
+
 
 
 

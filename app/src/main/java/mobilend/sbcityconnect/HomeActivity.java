@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 return true;
             case R.id.payments:
                 //go to payments
+                startActivity(new Intent(this, EPaymentActivity.class));
                 return true;
             case R.id.work:
                 Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();
