@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="mobilend.sbcityconnect.MainActivity"
-    android:background="@android:color/black" >
+    android:background="@color/colorBackgroundDarkBlue" >
 
     <Button
         android:text="BUSINESS"
@@ -19,7 +19,7 @@
         android:paddingLeft="30dip"
         android:id="@+id/businessButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/colorBusiness"
+        android:background="@color/colorBlueGreen"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:layout_below="@+id/workButton"
@@ -37,7 +37,7 @@
         android:paddingLeft="30dip"
         android:id="@+id/workButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/colorWork"
+        android:background="@color/colorLightBlue"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:layout_below="@+id/lifeButton"
@@ -55,7 +55,7 @@
         android:paddingLeft="30dip"
         android:id="@+id/governmentButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/colorGovernment"
+        android:background="@color/colorDarkGreen"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:layout_marginTop="4dp"
@@ -74,7 +74,7 @@
         android:id="@+id/loginButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/colorLogin"
-        android:textColor="@color/colorLoginText"
+        android:textColor="@color/colorMaroon"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:layout_marginTop="4dp"
@@ -135,7 +135,7 @@
         android:layout_height="75dp"
         android:id="@+id/lifeButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/colorLife"
+        android:background="@color/colorDarkBlue"
         android:textAlignment="textStart"
         android:textSize="30sp"
         android:onClick="goToLife"

@@ -3,6 +3,7 @@ package mobilend.sbcityconnect;
 import android.content.Intent;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -37,4 +38,5 @@ public class LifeActivity extends Activity implements OnItemClickListener {
             startActivity(myIntent);
         }
     }
+
 }

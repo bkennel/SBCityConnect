@@ -11,4 +11,15 @@
     <color name="colorLoginText">#FF0000</color>
     <color name="colorMenu">#1e6eb5</color>
     <color name="colorMenuText">#26a69a</color>
+
+    <color name="colorDarkBlue">#004A8A</color>
+    <color name="colorLightBlue">#0070B0</color>
+    <color name="colorBlueGreen">#009297</color>
+    <color name="colorDarkGreen">#1FAE92</color>
+    <color name="colorLightGreen">#9FD8CE</color>
+    <color name="colorMaroon">#96031E</color>
+    <color name="colorBackgroundDarkBlue">#002c44</color>
+
+
+
 </resources>
