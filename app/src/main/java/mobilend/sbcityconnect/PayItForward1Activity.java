@@ -7,6 +7,7 @@ import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -33,7 +34,7 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
                 popup.show();
             }
         });
-
+        //EditText editText = (EditText) findViewById(R.id.editText);
     }
 
 /*    @Override
