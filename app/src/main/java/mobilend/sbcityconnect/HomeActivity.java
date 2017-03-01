@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new OnClickListener() {
@@ -50,12 +51,12 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
-    }
+    }*/
 
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
