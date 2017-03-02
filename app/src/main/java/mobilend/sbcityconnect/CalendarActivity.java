@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class CalendarActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
@@ -86,15 +87,16 @@ public class CalendarActivity extends AppCompatActivity implements PopupMenu.OnM
 
 
     public void addEvent(View view){
-        /*Intent event=new Intent(Intent.ACTION_INSERT_OR_EDIT);
+        Calendar c=Calendar.getInstance();
+        Intent event=new Intent(Intent.ACTION_EDIT);
         event.setType("vnd.android.cursor.item/event");
-        event.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,currentDate.getTimeInMillis());
-        event.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,currentDate.getTimeInMillis());
+        event.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,c.getTimeInMillis());
+        event.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,c.getTimeInMillis());
         event.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY,true);
         event.putExtra(CalendarContract.Events.TITLE,"Event");
         event.putExtra(CalendarContract.Events.EVENT_LOCATION,"112 Notre Dame Ave.");
         event.putExtra(CalendarContract.Events.DESCRIPTION,"event description");
 
-        startActivity(event);*/
+        startActivity(event);
     }
 }
