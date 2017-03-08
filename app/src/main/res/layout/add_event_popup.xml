@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleBox"
+        android:hint="Title"
+        android:inputType="text" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/locationBox"
+        android:hint="Location"
+        android:inputType="text" />
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:gravity="center"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:yearListSelectorColor="@color/colorDarkGreen" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlueGreen"
+        android:id="@+id/okButton"
+        android:text="OK"
+        android:textColor="@color/colorWhiteGray"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLogin"
+        android:id="@+id/cancelButton"
+        android:text="Cancel"
+        android:textColor="@color/colorLoginText"
+        />
+
+
+</LinearLayout>
