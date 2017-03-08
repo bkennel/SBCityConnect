@@ -43,7 +43,10 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".EPaymentActivity" />
         <activity android:name=".PayItForward1Activity" />
-        <activity android:name=".MakeAPayment1Activity"></activity>
+        <activity android:name=".MakeAPayment1Activity" />
+        <activity android:name=".CalendarHomeActivity"></activity>
+        <activity android:name=".MakeAPayment1Activity" />
+        <activity android:name=".PaymentSummaryActivity"></activity>
     </application>
 
 </manifest>
