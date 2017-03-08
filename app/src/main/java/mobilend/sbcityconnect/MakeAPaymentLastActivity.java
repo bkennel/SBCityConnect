@@ -10,14 +10,13 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-public class PaymentSummaryActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
+public class MakeAPaymentLastActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     ImageButton menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_summary);
+        setContentView(R.layout.activity_make_apayment_last);
 
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -27,13 +26,14 @@ public class PaymentSummaryActivity extends AppCompatActivity implements PopupMe
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(PaymentSummaryActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(PaymentSummaryActivity.this);
+                PopupMenu popup = new PopupMenu(MakeAPaymentLastActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(MakeAPaymentLastActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
             }
         });
     }
+
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
             case R.id.life:
@@ -71,8 +71,8 @@ public class PaymentSummaryActivity extends AppCompatActivity implements PopupMe
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.menuIcon:
-                PopupMenu popup = new PopupMenu(PaymentSummaryActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(PaymentSummaryActivity.this);
+                PopupMenu popup = new PopupMenu(MakeAPaymentLastActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(MakeAPaymentLastActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
                 return true;
@@ -80,8 +80,8 @@ public class PaymentSummaryActivity extends AppCompatActivity implements PopupMe
         return false;
     }
 
-    public void goToThankYou(View view){
-        Intent intent = new Intent(this, MakeAPaymentLastActivity.class);
+    public void goBack(View view){
+        Intent intent = new Intent(this, MakeAPayment1Activity.class);
         startActivity(intent);
     }
 }
