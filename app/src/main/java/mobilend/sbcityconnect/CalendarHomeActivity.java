@@ -98,6 +98,12 @@ public class CalendarHomeActivity extends AppCompatActivity {
         });
         TextView taskHeader=(TextView) findViewById(R.id.taskHeader);
         taskHeader.setText(events.get(0).getTitle());
+        TextView tasks=(TextView) findViewById(R.id.toDoItems);
+        String taskText="";
+        for(int i=0;i<events.size();i++){
+            taskText+=events.get(i).getTitle()+'\n';
+        }
+        tasks.setText(taskText);
     }
 
     public void goToMonthlyCalendar(View view){
