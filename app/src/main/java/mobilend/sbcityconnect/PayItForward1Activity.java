@@ -8,12 +8,18 @@ import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PayItForward1Activity extends AppCompatActivity implements android.widget.PopupMenu.OnMenuItemClickListener  {
     ImageButton menuButton;
+    private Spinner addressSpinner, accountSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +41,31 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
                 popup.show();
             }
         });
-        //EditText editText = (EditText) findViewById(R.id.editText);
+        addItemsAddressSpinner();
+        addItemsAccountSpinner();
     }
-
+    public void addItemsAddressSpinner(){
+        addressSpinner = (Spinner) findViewById(R.id.BillingAddressSpinner);
+        List<String> list = new ArrayList<String>();
+        list.add("Billing Address");
+        list.add("Address 1");
+        list.add("Address 2");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        addressSpinner.setAdapter(dataAdapter);
+    }
+    public void addItemsAccountSpinner(){
+        accountSpinner = (Spinner) findViewById(R.id.PaymentAccountSpinner);
+        List<String> list = new ArrayList<String>();
+        list.add("Payment Account");
+        list.add("Account 1");
+        list.add("Account 2");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        accountSpinner.setAdapter(dataAdapter);
+    }
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater=getMenuInflater();

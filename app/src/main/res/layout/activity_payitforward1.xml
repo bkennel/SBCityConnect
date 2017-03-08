@@ -77,11 +77,81 @@
     <DatePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="340dp"
         android:id="@+id/datePicker"
         android:layout_centerHorizontal="true"
         android:datePickerMode="spinner"
         android:calendarViewShown="false"
-        android:yearListSelectorColor="@color/colorDarkGreen" />
+        android:yearListSelectorColor="@color/colorDarkGreen"
+        />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="70dp"
+        android:id="@+id/BillingAddressSpinner"
+        android:background="@drawable/payment_spinner"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/PaymentAccountSpinner"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/payment_spinner"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/BillingAddressSpinner"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/downarrow2"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/ic_down_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/BillingAddressSpinner"
+        android:layout_marginTop="16dp"/>
+
+    <ImageView
+        android:layout_below="@id/editText"
+        android:id="@+id/downarrow1"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/ic_down_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <ImageView
+        android:id="@+id/rightarrow"
+        android:layout_marginTop="112dp"
+        android:layout_marginLeft="100dp"
+        android:src="@drawable/ic_right_arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
+        android:text="Payment Date"
+        android:layout_below="@id/PaymentAccountSpinner"
+        android:layout_marginTop="20dp"
+        android:id="@+id/PaymentDateText"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/payment_line"
+        android:layout_below="@+id/PaymentDateText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"/>
 </RelativeLayout>
