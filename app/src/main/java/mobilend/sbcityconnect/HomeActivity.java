@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     }
 
     public void goToCalendar(View view){
-        Intent intent = new Intent(this, CalendarActivity.class);
+        Intent intent = new Intent(this, CalendarHomeActivity.class);
         startActivity(intent);
     }
 }
