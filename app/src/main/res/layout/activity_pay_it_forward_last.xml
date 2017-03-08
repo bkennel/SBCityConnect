@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mobilend.sbcityconnect.PayItForward1Activity"
+    android:background="@color/colorDarkGreen">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorDarkGreen"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:dividerPadding="8dp"
+            >
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGreen"
+                android:id="@+id/menuButton"
+                android:src="@drawable/menu_icon"
+                android:width="50dp"
+                android:height="140dp"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:text="Thank you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/textView"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:text="for your payment!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"/>
+
+    <Button
+        android:text="pay another bill"
+        android:textAllCaps="false"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="25dp"
+        android:id="@+id/button"
+        android:textColor="@color/colorBackgroundDarkBlue"
+        android:background="@color/colorDarkGreen"
+        android:onClick="goBack"/>
+</RelativeLayout>

@@ -47,7 +47,9 @@
         <activity android:name=".CalendarHomeActivity" />
         <activity android:name=".MakeAPayment1Activity" />
         <activity android:name=".PaymentSummaryActivity" />
-        <activity android:name=".MakeAPaymentLastActivity"></activity>
+        <activity android:name=".MakeAPaymentLastActivity" />
+        <activity android:name=".PayItForwardSummaryActivity" />
+        <activity android:name=".PayItForwardLastActivity"></activity>
     </application>
 
 </manifest>

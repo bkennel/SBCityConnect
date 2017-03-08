@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="mobilend.sbcityconnect.PayItForward1Activity"
+    android:background="@color/colorWhiteGray">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAYMENT SUMMARY"
+        android:layout_marginTop="85dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGray"
+        android:id="@+id/textSummary"
+        />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorLightGray"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:dividerPadding="8dp"
+            >
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorLightGray"
+                android:id="@+id/menuButton"
+                android:src="@drawable/menu_icon"
+                android:width="50dp"
+                android:height="140dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PAYMENT"
+                android:layout_gravity="center"
+                android:paddingLeft="60dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/toolbarPaymentTitle"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/summary_box"
+        android:layout_below="@+id/textSummary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:id="@+id/summaryBox"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/summaryBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/submitButton"
+        android:background="@color/colorDarkGreen"
+        android:text="Submit Payment"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:onClick="goToThankYou"/>
+</RelativeLayout>

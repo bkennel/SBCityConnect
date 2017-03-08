@@ -154,4 +154,13 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="5dp"/>
+    <Button
+        android:text="Submit Payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Submitbutton"
+        android:onClick="goToPaymentSummary"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/downarrow2"
+        android:layout_marginLeft="190dp"/>
 </RelativeLayout>
