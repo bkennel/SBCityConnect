@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:text="FEB"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/month"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="10"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="Meeting with Judy"
+        android:layout_width="240dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/month"
+        android:layout_toEndOf="@+id/month"
+        android:id="@+id/title"
+        android:background="@android:color/white"/>
+
+    <TextView
+        android:text="3:00 pm"
+        android:layout_width="240dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/date"
+        android:layout_toEndOf="@+id/date"
+        android:id="@+id/time"
+        android:background="@android:color/white" />
+
+    <TextView
+        android:text="234 West Lake Hall"
+        android:layout_width="240dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/date"
+        android:layout_toRightOf="@+id/date"
+        android:layout_toEndOf="@+id/date"
+        android:layout_below="@+id/time"
+        android:id="@+id/location"
+        android:background="@android:color/white"/>
+</merge>
+<!--</RelativeLayout>-->
