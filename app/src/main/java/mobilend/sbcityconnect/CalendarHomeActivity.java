@@ -6,14 +6,17 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,10 +25,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
 
-public class CalendarHomeActivity extends AppCompatActivity {
+public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     Calendar cal;
     ImageButton addEventButton;
     ArrayList<CalendarEvent> events;
+    ImageButton menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,18 @@ public class CalendarHomeActivity extends AppCompatActivity {
         dateText.setText(month+" "+date);
 
         events=new ArrayList<CalendarEvent>();
+
+        //setup popup menu
+        menuButton=(ImageButton) findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(CalendarHomeActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(CalendarHomeActivity.this);
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                popup.show();
+            }
+        });
 
         //prepare listener for popup window
         addEventButton=(ImageButton) findViewById(R.id.addEventButton);
@@ -104,6 +120,39 @@ public class CalendarHomeActivity extends AppCompatActivity {
             taskText+=events.get(i).getTitle()+'\n';
         }
         tasks.setText(taskText);
+    }
+
+    public boolean onMenuItemClick(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.life:
+                //TODO - implement submenu
+                Toast.makeText(this,"Life",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.calendar:
+                startActivity(new Intent(this, CalendarActivity.class));
+                return true;
+            case R.id.payments:
+                //go to payments
+                startActivity(new Intent(this, EPaymentActivity.class));
+                return true;
+            case R.id.work:
+                Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.business:
+                Toast.makeText(this,"Business",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.government:
+                Toast.makeText(this,"Government",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.settings:
+                Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.logout:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+
+        }
+        return false;
     }
 
     public void goToMonthlyCalendar(View view){
