@@ -129,9 +129,8 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         }
         return false;
     }
-
-    public void goToPaymentSummary(View view){
-        Intent intent = new Intent(this, PaymentSummaryActivity.class);
+    public void goToThankYou(View view){
+        Intent intent = new Intent(this, MakeAPaymentLastActivity.class);
         startActivity(intent);
     }
 }

@@ -22,8 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LifeActivity" />
-        <activity android:name=".MoneyManagement" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"
@@ -46,10 +44,10 @@
         <activity android:name=".MakeAPayment1Activity" />
         <activity android:name=".CalendarHomeActivity" />
         <activity android:name=".MakeAPayment1Activity" />
-        <activity android:name=".PaymentSummaryActivity" />
         <activity android:name=".MakeAPaymentLastActivity" />
-        <activity android:name=".PayItForwardSummaryActivity" />
-        <activity android:name=".PayItForwardLastActivity"></activity>
+        <activity android:name=".PayItForwardLastActivity" />
+        <activity android:name=".PaymentAlertActivity" />
+        <activity android:name=".AlertSummaryActivity"></activity>
     </application>
 
 </manifest>

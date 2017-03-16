@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,7 +26,12 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payitforward1);
-        //Intent intent = getIntent();
+
+        NumberPicker np = (NumberPicker) findViewById(R.id.np);
+
+        np.setMinValue(0);
+        np.setMaxValue(2);
+        np.setDisplayedValues( new String[] { "Neighbor", "Future Self", "Community" } );
 
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -119,8 +125,9 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
         return false;
     }
 
-    public void goToPaymentSummary(View view){
-        Intent intent = new Intent(this, PaymentSummaryActivity.class);
+
+    public void goToThankYou(View view){
+        Intent intent = new Intent(this, PayItForwardLastActivity.class);
         startActivity(intent);
     }
 }

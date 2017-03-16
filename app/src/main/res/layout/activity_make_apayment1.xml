@@ -1,181 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_payment1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mobilend.sbcityconnect.PayItForward1Activity"
-    android:background="@color/colorWhiteGray">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <TextView
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_payment1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AMOUNT"
-        android:layout_marginTop="85dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
-        android:textSize="15dp"
-        android:textColor="@color/colorDarkGray"
-        />
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="mobilend.sbcityconnect.PayItForward1Activity"
+        android:background="@color/colorWhiteGray">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="fill_parent"
-        android:layout_marginRight="30dp"
-        android:layout_height="40dp"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="30dp"
-        android:background="@drawable/edit_text_border"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AMOUNT"
+            android:layout_marginTop="85dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorDarkGray"
+            />
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorLightGray"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp" >
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="fill_parent"
+            android:layout_marginRight="30dp"
+            android:layout_height="40dp"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="115dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/edit_text_border"
+            />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:orientation="horizontal"
-            android:dividerPadding="8dp"
-            >
-            <ImageButton
+            android:background="@color/colorLightGray"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="11dp" >
+
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/colorLightGray"
-                android:id="@+id/menuButton"
-                android:src="@drawable/menu_icon"
-                android:width="50dp"
-                android:height="140dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PAYMENT"
-                android:layout_gravity="center"
-                android:paddingLeft="60dp"
-                android:layout_marginTop="12dp"
-                android:id="@+id/toolbarPaymentTitle"
-                android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:dividerPadding="8dp"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorLightGray"
+                    android:id="@+id/menuButton"
+                    android:src="@drawable/menu_icon"
+                    android:width="50dp"
+                    android:height="140dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PAYMENT"
+                    android:layout_gravity="center"
+                    android:paddingLeft="60dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/toolbarPaymentTitle"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    />
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.Toolbar>
 
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:id="@+id/datePicker"
-        android:layout_centerHorizontal="true"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-        android:yearListSelectorColor="@color/colorDarkGreen"
-        />
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="340dp"
+            android:id="@+id/datePicker"
+            android:layout_centerHorizontal="true"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:yearListSelectorColor="@color/colorDarkGreen"
+            />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/PaymentTypeSpinner"
-        android:background="@drawable/payment_spinner"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/PaymentTypeSpinner"
+            android:background="@drawable/payment_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_below="@+id/PaymentTypeSpinner"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/BillingAddressSpinner"
-        android:background="@drawable/payment_spinner"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/PaymentTypeSpinner"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/BillingAddressSpinner"
+            android:background="@drawable/payment_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/PaymentAccountSpinner"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/payment_spinner"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_below="@+id/BillingAddressSpinner"
-        android:layout_marginTop="8dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/PaymentAccountSpinner"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/payment_spinner"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@+id/BillingAddressSpinner"
+            android:layout_marginTop="8dp"/>
 
-    <ImageView
-        android:layout_below="@id/editText"
-        android:id="@+id/downarrow1"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="300dp"
-        android:src="@drawable/ic_down_arrow"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <ImageView
+            android:layout_below="@id/editText"
+            android:id="@+id/downarrow1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="300dp"
+            android:src="@drawable/ic_down_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <ImageView
-        android:id="@+id/downarrow2"
-        android:layout_marginLeft="300dp"
-        android:src="@drawable/ic_down_arrow"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_below="@id/PaymentTypeSpinner"
-        android:layout_marginTop="20dp"/>
+        <ImageView
+            android:id="@+id/downarrow2"
+            android:layout_marginLeft="300dp"
+            android:src="@drawable/ic_down_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/PaymentTypeSpinner"
+            android:layout_marginTop="20dp"/>
 
-    <ImageView
-        android:layout_below="@id/BillingAddressSpinner"
-        android:id="@+id/downarrow3"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="300dp"
-        android:src="@drawable/ic_down_arrow"
-        android:layout_width="20dp"
-        android:layout_height="20dp" />
+        <ImageView
+            android:layout_below="@id/BillingAddressSpinner"
+            android:id="@+id/downarrow3"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="300dp"
+            android:src="@drawable/ic_down_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="30dp"
-        android:text="Payment Date"
-        android:layout_below="@id/PaymentAccountSpinner"
-        android:layout_marginTop="20dp"
-        android:id="@+id/PaymentDateText"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="30dp"
+            android:text="Payment Date"
+            android:layout_below="@id/PaymentAccountSpinner"
+            android:layout_marginTop="20dp"
+            android:id="@+id/PaymentDateText"/>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="@drawable/payment_line"
-        android:layout_below="@+id/PaymentDateText"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="5dp"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/payment_line"
+            android:layout_below="@+id/PaymentDateText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"/>
 
-    <Button
-        android:text="Submit Payment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/PaymentAccountSpinner"
-        android:layout_alignRight="@+id/downarrow3"
-        android:layout_alignEnd="@+id/downarrow3"
-        android:id="@+id/Submitbutton"
-        android:onClick="goToPaymentSummary"/>
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PAYMENT SUMMARY"
+            android:layout_below="@+id/datePicker"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorDarkGray"
+            android:id="@+id/textSummary"
+            />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/summary_box"
+            android:layout_below="@+id/textSummary"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/summaryBox"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@+id/summaryBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp"
+            android:id="@+id/submitButton"
+            android:background="@color/colorDarkGreen"
+            android:text="Submit Payment"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:onClick="goToThankYou"/>
+
+    </RelativeLayout>
+</ScrollView>
