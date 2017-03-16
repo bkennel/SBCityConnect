@@ -6,11 +6,22 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/PopupMenuTextStyle</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">@color/colorBackgroundDarkBlue</item>
+    </style>
+
+    <style name="PopupMenuTextStyle" parent="@android:style/TextAppearance.DeviceDefault.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">NEXT</string>
