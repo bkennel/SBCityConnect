@@ -47,7 +47,8 @@
         <activity android:name=".MakeAPaymentLastActivity" />
         <activity android:name=".PayItForwardLastActivity" />
         <activity android:name=".PaymentAlertActivity" />
-        <activity android:name=".AlertSummaryActivity"></activity>
+        <activity android:name=".AlertSummaryActivity" />
+        <activity android:name=".BudgetBuilderActivity"></activity>
     </application>
 
 </manifest>
