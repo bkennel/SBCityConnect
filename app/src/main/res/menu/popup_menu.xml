@@ -12,6 +12,9 @@
             <item
                 android:id="@+id/payments"
                 android:title="Payments" />
+            <item
+                android:id="@+id/moneyManagement"
+                android:title="Money Management" />
         </menu>
     </item>
     <item

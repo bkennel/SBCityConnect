@@ -48,7 +48,8 @@
         <activity android:name=".PayItForwardLastActivity" />
         <activity android:name=".PaymentAlertActivity" />
         <activity android:name=".AlertSummaryActivity" />
-        <activity android:name=".BudgetBuilderActivity"></activity>
+        <activity android:name=".BudgetBuilderActivity" />
+        <activity android:name=".MoneyManagementHomeActivity"></activity>
     </application>
 
 </manifest>

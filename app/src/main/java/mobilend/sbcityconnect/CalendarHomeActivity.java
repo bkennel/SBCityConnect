@@ -1,6 +1,5 @@
 package mobilend.sbcityconnect;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -134,6 +133,9 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
             case R.id.payments:
                 //go to payments
                 startActivity(new Intent(this, EPaymentActivity.class));
+                return true;
+            case R.id.moneyManagement:
+                startActivity(new Intent(this, MoneyManagementHomeActivity.class));
                 return true;
             case R.id.work:
                 Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();

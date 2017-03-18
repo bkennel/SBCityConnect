@@ -10,13 +10,13 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-public class MakeAPaymentLastActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
+public class MoneyManagementHomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_make_apayment_last);
+        setContentView(R.layout.activity_money_management_home);
 
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -26,13 +26,21 @@ public class MakeAPaymentLastActivity extends AppCompatActivity implements Popup
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(MakeAPaymentLastActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(MakeAPaymentLastActivity.this);
+                PopupMenu popup = new PopupMenu(MoneyManagementHomeActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(MoneyManagementHomeActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
             }
         });
+
     }
+
+/*    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }*/
 
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
@@ -74,17 +82,17 @@ public class MakeAPaymentLastActivity extends AppCompatActivity implements Popup
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.menuIcon:
-                PopupMenu popup = new PopupMenu(MakeAPaymentLastActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(MakeAPaymentLastActivity.this);
+                PopupMenu popup = new PopupMenu(MoneyManagementHomeActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(MoneyManagementHomeActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
                 return true;
         }
         return false;
     }
-
-    public void goBack(View view){
-        Intent intent = new Intent(this, MakeAPayment1Activity.class);
+    public void goToBudgetBuilder(View view){
+        Intent intent = new Intent(this, BudgetBuilderActivity.class);
         startActivity(intent);
+
     }
 }

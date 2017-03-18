@@ -2,7 +2,6 @@ package mobilend.sbcityconnect;
 
 import android.content.Intent;
 import android.provider.CalendarContract;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -64,6 +63,9 @@ public class CalendarActivity extends AppCompatActivity implements PopupMenu.OnM
             case R.id.payments:
                 //go to payments
                 startActivity(new Intent(this, EPaymentActivity.class));
+                return true;
+            case R.id.moneyManagement:
+                startActivity(new Intent(this, MoneyManagementHomeActivity.class));
                 return true;
             case R.id.work:
                 Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();

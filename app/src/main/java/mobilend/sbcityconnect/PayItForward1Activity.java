@@ -1,15 +1,12 @@
 package mobilend.sbcityconnect;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
@@ -91,6 +88,9 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
             case R.id.payments:
                 //go to payments
                 startActivity(new Intent(this, EPaymentActivity.class));
+                return true;
+            case R.id.moneyManagement:
+                startActivity(new Intent(this, MoneyManagementHomeActivity.class));
                 return true;
             case R.id.work:
                 Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();

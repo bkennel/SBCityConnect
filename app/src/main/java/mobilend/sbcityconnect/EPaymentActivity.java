@@ -55,6 +55,9 @@ public class EPaymentActivity extends AppCompatActivity implements PopupMenu.OnM
                 //go to payments
                 startActivity(new Intent(this, EPaymentActivity.class));
                 return true;
+            case R.id.moneyManagement:
+                startActivity(new Intent(this, MoneyManagementHomeActivity.class));
+                return true;
             case R.id.work:
                 Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();
                 return true;
