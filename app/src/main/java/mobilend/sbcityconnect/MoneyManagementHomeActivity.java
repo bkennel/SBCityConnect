@@ -95,4 +95,10 @@ public class MoneyManagementHomeActivity extends AppCompatActivity implements Po
         startActivity(intent);
 
     }
+
+    public void goToMonthlySpending(View view){
+        Intent intent = new Intent(this, MonthlySpending1Activity.class);
+        startActivity(intent);
+
+    }
 }

@@ -49,7 +49,9 @@
         <activity android:name=".PaymentAlertActivity" />
         <activity android:name=".AlertSummaryActivity" />
         <activity android:name=".BudgetBuilderActivity" />
-        <activity android:name=".MoneyManagementHomeActivity"></activity>
+        <activity android:name=".MoneyManagementHomeActivity" />
+        <activity android:name=".DeleteBudgetActivity" />
+        <activity android:name=".MonthlySpending1Activity"></activity>
     </application>
 
 </manifest>

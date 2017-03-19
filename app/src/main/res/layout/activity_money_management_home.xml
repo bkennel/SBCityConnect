@@ -26,23 +26,42 @@
         android:onClick="goToBudgetBuilder"/>
 
     <Button
-        android:text="BUDGET TRACKER"
+    android:text="BUDGET TRACKER"
+    android:autoText="true"
+    android:layout_width="fill_parent"
+    android:layout_height="75dp"
+    android:paddingLeft="30dip"
+    android:id="@+id/make_a_paymentButton"
+    style="@style/Widget.AppCompat.Button.Colored"
+    android:background="@color/colorDarkGreen"
+    android:textAlignment="textStart"
+    android:textSize="30sp"
+    android:layout_below="@+id/pay_it_forwardButton"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_marginTop="4dp"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentEnd="true"
+    android:onClick="goToMakeAPayment1"/>
+
+    <Button
+        android:text="MONTHLY SPENDING"
         android:autoText="true"
         android:layout_width="fill_parent"
         android:layout_height="75dp"
         android:paddingLeft="30dip"
-        android:id="@+id/make_a_paymentButton"
+        android:id="@+id/monthly_spending_button"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/colorDarkGreen"
         android:textAlignment="textStart"
         android:textSize="30sp"
-        android:layout_below="@+id/pay_it_forwardButton"
+        android:layout_below="@+id/make_a_paymentButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="4dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="goToMakeAPayment1"/>
+        android:onClick="goToMonthlySpending"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

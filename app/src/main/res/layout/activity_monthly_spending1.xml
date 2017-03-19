@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_monthly_spending1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="mobilend.sbcityconnect.MonthlySpending1Activity">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorLightGray"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="11dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:dividerPadding="8dp"
+                >
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorLightGray"
+                    android:id="@+id/menuButton"
+                    android:src="@drawable/menu_icon"
+                    android:width="50dp"
+                    android:height="140dp"
+                    />
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="SPENDING THIS MONTH"
+                    android:textAlignment="center"
+                    android:lines="2"
+                    android:layout_gravity="center"
+                    android:paddingLeft="30dp"
+                    android:id="@+id/toolbarPaymentTitle"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="25dp"
+            android:indeterminate="false"
+            android:layout_below="@+id/toolbar"
+            android:progressDrawable="@drawable/progress_circle"
+            android:background="@drawable/circle_shape"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="100"
+            android:progress="70"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-30dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="150dp"
+            android:text="You have"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/youHaveText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/youHaveText"
+            android:layout_marginTop="2dp"
+            android:layout_alignLeft="@+id/youHaveText"
+            android:text="$200.67"
+            android:textStyle="bold"
+            android:textColor="@color/colorDarkGreen"
+            android:textSize="15dp"
+            android:id="@+id/amountText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/youHaveText"
+            android:layout_marginTop="2dp"
+            android:layout_alignLeft="@+id/youHaveText"
+            android:text="$200.67"
+            android:textStyle="bold"
+            android:textColor="@color/colorDarkGreen"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/amountText"
+            android:layout_marginTop="2dp"
+            android:layout_alignLeft="@+id/amountText"
+            android:text="this month"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/thisMonthText"/>
+
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/gray_box_header"
+        android:text="Today"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="120dp"
+        android:id="@+id/todayHeader"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/food"
+            android:layout_below="@id/todayHeader"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/foodIcon"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/todayHeader"
+            android:layout_marginTop="18dp"
+            android:text="MARTIN'S GROCERY"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:layout_alignStart="@+id/foodIcon"
+            android:layout_marginLeft="30dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@id/todayHeader"
+            android:layout_marginTop="18dp"
+            android:text="-$85.00"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/gray_box_header"
+            android:text="JAN 27, 2017"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_below="@id/todayHeader"
+            android:layout_marginTop="45dp"
+            android:id="@+id/Header2"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/house"
+            android:layout_below="@id/Header2"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/houseIcon"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/Header2"
+            android:layout_marginTop="18dp"
+            android:text="RENT"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/rentText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@id/Header2"
+            android:layout_marginTop="18dp"
+            android:text="-$850.00"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/amountRent"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/lightbulb"
+            android:layout_below="@id/houseIcon"
+            android:layout_alignLeft="@id/houseIcon"
+            android:layout_marginTop="15dp"
+            android:id="@+id/utilitiesIcon"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/houseIcon"
+            android:layout_alignLeft="@id/rentText"
+            android:layout_marginTop="18dp"
+            android:text="UTILITIES"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/utilitiesText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/houseIcon"
+            android:layout_alignLeft="@id/amountRent"
+            android:layout_marginTop="18dp"
+            android:text="-$64.00"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/utilitiesAmount"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/dollar_sign"
+            android:layout_below="@id/utilitiesIcon"
+            android:layout_alignLeft="@id/utilitiesIcon"
+            android:layout_marginTop="15dp"
+            android:id="@+id/incomeIcon"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/utilitiesIcon"
+            android:layout_alignLeft="@id/rentText"
+            android:layout_marginTop="18dp"
+            android:text="INCOME"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/incomeText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/utilitiesIcon"
+            android:layout_alignLeft="@id/amountRent"
+            android:layout_marginTop="18dp"
+            android:text="+$1000.00"
+            android:textColor="@color/colorDarkGreen"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/incomeAmount"
+            />
+
+    </RelativeLayout>
+</ScrollView>

@@ -208,6 +208,16 @@
         android:layout_marginLeft="270dp"
         android:id="@+id/firstPencil"/>
 
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/currentBudgetItems"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:tint="@color/colorLightGray"
+        android:layout_marginLeft="315dp"
+        android:id="@+id/firstTrash"
+    />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="30dp"
@@ -229,6 +239,16 @@
         android:tint="@color/colorLightGray"
         android:id="@+id/secondPencil"/>
 
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/firstTrash"
+        android:layout_alignLeft="@+id/firstTrash"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:tint="@color/colorLightGray"
+        android:id="@+id/secondTrash"/>
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="30dp"
@@ -249,5 +269,15 @@
         android:src="@drawable/ic_pencil_gray"
         android:tint="@color/colorLightGray"
         android:id="@+id/thirdPencil"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_below="@id/secondTrash"
+        android:layout_alignLeft="@+id/secondTrash"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:tint="@color/colorLightGray"
+        android:id="@+id/thirdTrash"/>
 
 </RelativeLayout>
