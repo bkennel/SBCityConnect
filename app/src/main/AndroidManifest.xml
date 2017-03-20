@@ -51,7 +51,8 @@
         <activity android:name=".BudgetBuilderActivity" />
         <activity android:name=".MoneyManagementHomeActivity" />
         <activity android:name=".DeleteBudgetActivity" />
-        <activity android:name=".MonthlySpending1Activity"></activity>
+        <activity android:name=".MonthlySpending1Activity" />
+        <activity android:name=".BudgetTrackerActivity"></activity>
     </application>
 
 </manifest>

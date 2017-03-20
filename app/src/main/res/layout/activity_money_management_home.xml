@@ -42,7 +42,7 @@
     android:layout_marginTop="4dp"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true"
-    android:onClick="goToMakeAPayment1"/>
+    android:onClick="goToBudgetTracker"/>
 
     <Button
         android:text="MONTHLY SPENDING"

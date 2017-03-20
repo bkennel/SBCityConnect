@@ -6,28 +6,29 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-public class MoneyManagementHomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
+public class BudgetTrackerActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_money_management_home);
+        setContentView(R.layout.activity_budget_tracker);
 
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
 
-        menuButton=(ImageButton) findViewById(R.id.menuButton);
-        menuButton.setOnClickListener(new View.OnClickListener() {
+        menuButton = (ImageButton) findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(MoneyManagementHomeActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(MoneyManagementHomeActivity.this);
+                PopupMenu popup = new PopupMenu(BudgetTrackerActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(BudgetTrackerActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
             }
@@ -42,11 +43,11 @@ public class MoneyManagementHomeActivity extends AppCompatActivity implements Po
         return true;
     }*/
 
-    public boolean onMenuItemClick(MenuItem item){
-        switch(item.getItemId()){
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.life:
                 //TODO - implement submenu
-                Toast.makeText(this,"Life",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Life", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.calendar:
                 startActivity(new Intent(this, CalendarActivity.class));
@@ -59,16 +60,16 @@ public class MoneyManagementHomeActivity extends AppCompatActivity implements Po
                 startActivity(new Intent(this, MoneyManagementHomeActivity.class));
                 return true;
             case R.id.work:
-                Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Work", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.business:
-                Toast.makeText(this,"Business",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Business", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.government:
-                Toast.makeText(this,"Government",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Government", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.settings:
-                Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.logout:
                 startActivity(new Intent(this, MainActivity.class));
@@ -79,31 +80,15 @@ public class MoneyManagementHomeActivity extends AppCompatActivity implements Po
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             case R.id.menuIcon:
-                PopupMenu popup = new PopupMenu(MoneyManagementHomeActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(MoneyManagementHomeActivity.this);
+                PopupMenu popup = new PopupMenu(BudgetTrackerActivity.this, menuButton);
+                popup.setOnMenuItemClickListener(BudgetTrackerActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.show();
                 return true;
         }
         return false;
-    }
-    public void goToBudgetBuilder(View view){
-        Intent intent = new Intent(this, BudgetBuilderActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void goToMonthlySpending(View view){
-        Intent intent = new Intent(this, MonthlySpending1Activity.class);
-        startActivity(intent);
-
-    }
-    public void goToBudgetTracker(View view){
-        Intent intent = new Intent(this, BudgetTrackerActivity.class);
-        startActivity(intent);
-
     }
 }
