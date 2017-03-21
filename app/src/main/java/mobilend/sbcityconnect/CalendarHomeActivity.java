@@ -29,6 +29,7 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
     ImageButton addEventButton;
     ArrayList<CalendarEvent> events;
     ImageButton menuButton;
+    String user = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,8 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
                 popup.show();
             }
         });
+
+        user = getIntent().getStringExtra("USERNAME");
 
         //prepare listener for popup window
         addEventButton=(ImageButton) findViewById(R.id.addEventButton);

@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -62,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private String passEmail = "";
+    private String user = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -299,12 +302,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView.setAdapter(adapter);
     }
 
-    //Advance to home screen
-    public void goToHome(){
-        Intent intent=new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
-
 
     private interface ProfileQuery {
         String[] PROJECTION = {
@@ -329,6 +326,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         UserLoginTask(String email, String password) {
             mEmail = email;
             mPassword = password;
+            passEmail = email;
         }
 
         private Boolean setActivity(LoginActivity la){
@@ -381,6 +379,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+    }
+    //Advance to home screen
+    public void goToHome(){
+
+        Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+        if (passEmail.equals("joseph@gmail.com")){
+            user = "Joseph";
+        }
+
+        intent.putExtra("USERNAME", user);
+        startActivity(intent);
     }
 }
 

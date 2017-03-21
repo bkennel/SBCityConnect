@@ -1,6 +1,7 @@
 package mobilend.sbcityconnect;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,11 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
-
+    private String user = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,11 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
+
+        String user = getIntent().getStringExtra("USERNAME");
+
+        TextView tv1 = (TextView)findViewById(R.id.nameTitle);
+        tv1.setText(user);
 
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new OnClickListener() {
@@ -94,6 +101,10 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void goToCalendar(View view){
         Intent intent = new Intent(this, CalendarHomeActivity.class);
+        startActivity(intent);
+
+        //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+        intent.putExtra("USERNAME", user);
         startActivity(intent);
     }
 }

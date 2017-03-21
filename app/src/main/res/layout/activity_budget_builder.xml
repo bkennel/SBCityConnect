@@ -166,7 +166,8 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:id="@+id/addBudgetButton"
-        android:background="@color/colorDarkGreen"/>
+        android:background="@color/colorDarkGreen"
+        android:onClick="goToDeleteTEMP"/>
 
     <TextView
         android:background="@drawable/gray_line"

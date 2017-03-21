@@ -140,4 +140,8 @@ public class BudgetBuilderActivity extends AppCompatActivity implements PopupMen
         }
         return false;
     }
+    public void goToDeleteTEMP(View view){
+        Intent intent = new Intent(this, DeleteBudgetActivity.class);
+        startActivity(intent);
+    }
 }
