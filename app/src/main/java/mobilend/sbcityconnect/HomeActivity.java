@@ -52,6 +52,9 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             case R.id.calendar:
                 startActivity(new Intent(this, CalendarActivity.class));
                 return true;
+            case R.id.cityAssistance:
+                startActivity(new Intent(this, CityAssistanceActivity.class));
+                return true;
             case R.id.payments:
                 //go to payments
                 startActivity(new Intent(this, EPaymentActivity.class));

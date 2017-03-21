@@ -10,6 +10,9 @@
                 android:id="@+id/calendar"
                 android:title="Calendar" />
             <item
+                android:id="@+id/cityAssistance"
+                android:title="City Assistance" />
+            <item
                 android:id="@+id/payments"
                 android:title="Payments" />
             <item

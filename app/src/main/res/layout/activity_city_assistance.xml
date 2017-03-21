@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_city_assistance"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="mobilend.sbcityconnect.CityAssistanceActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorLightGray"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:dividerPadding="8dp"
+            >
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorLightGray"
+                android:id="@+id/menuButton"
+                android:src="@drawable/menu_icon"
+                android:width="50dp"
+                android:height="140dp"
+                />
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="CITY ASSISTANCE"
+                android:lines="2"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/toolbarTitle"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:text="REQUEST TYPE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="21dp"
+        android:id="@+id/requestTypeTitle" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/requestTypeTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/requestTypeSpinner"
+        android:background="@drawable/payment_spinner"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+    <ImageView
+        android:layout_below="@id/requestTypeTitle"
+        android:id="@+id/downarrow1"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/ic_down_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:text="ISSUE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/requestTypeSpinner"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="21dp"
+        android:id="@+id/issueTitle" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/issueTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/issueSpinner"
+        android:background="@drawable/payment_spinner"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+    <ImageView
+        android:layout_below="@id/issueTitle"
+        android:id="@+id/downarrow2"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="300dp"
+        android:src="@drawable/ic_down_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:text="LOCATION"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/issueSpinner"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="21dp"
+        android:id="@+id/locationTitle" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/locationText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Enter location here"
+        android:background="@drawable/edit_text_border"
+        android:lines="1"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locationText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/imageThumbnail"/>
+
+    <Button
+        android:text="TAKE PHOTO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageThumbnail"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/takePhotoButton"
+        android:background="@color/colorDarkGray"
+        android:textColor="@android:color/white"
+        android:onClick="takePicture"
+        />
+    <Button
+        android:text="MAKE REQUEST"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/takePhotoButton"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/makeRequestButton"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:onClick="makeRequest"
+        />
+
+    <TextView
+        android:background="@drawable/gray_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/makeRequestButton"
+        android:layout_marginTop="15dp"
+        android:id="@+id/line" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:id="@+id/myRequests"
+        android:layout_marginLeft="30dp"
+        android:text="MY REQUESTS"
+        android:textStyle="bold"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+</RelativeLayout>
