@@ -10,9 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="mobilend.sbcityconnect.MonthlySpending1Activity">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -102,11 +99,12 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/youHaveText"
             android:layout_marginTop="2dp"
-            android:layout_alignLeft="@+id/youHaveText"
-            android:text="$200.67"
-            android:textStyle="bold"
-            android:textColor="@color/colorDarkGreen"
-            android:textSize="15dp"/>
+            android:layout_alignLeft="@+id/amountText"
+            android:layout_marginLeft="60dp"
+            android:text="left"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/leftText"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -273,6 +271,161 @@
             android:textStyle="bold"
             android:id="@+id/incomeAmounts"
             />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/gray_box_header"
+            android:text="JAN 24, 2017"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_below="@id/Header2"
+            android:layout_marginTop="120dp"
+            android:id="@+id/Header3"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/food"
+            android:layout_below="@id/Header3"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/foodIcon2"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/Header3"
+            android:layout_marginTop="18dp"
+            android:text="CAFE"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/cafeText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@id/Header3"
+            android:layout_marginTop="18dp"
+            android:text="-$4.55"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/amountCafe"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/food"
+            android:layout_below="@id/foodIcon2"
+            android:layout_alignLeft="@id/houseIcon"
+            android:layout_marginTop="15dp"
+            android:id="@+id/foodIcon3"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/foodIcon2"
+            android:layout_alignLeft="@id/rentText"
+            android:layout_marginTop="18dp"
+            android:text="ALDI"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/aldiText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/foodIcon2"
+            android:layout_alignLeft="@id/amountRent"
+            android:layout_marginTop="18dp"
+            android:text="-$50.77"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/aldiAmount"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/gray_box_header"
+            android:text="JAN 20, 2017"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_below="@id/Header3"
+            android:layout_marginTop="85dp"
+            android:id="@+id/Header4"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/food"
+            android:layout_below="@id/Header4"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/foodIcon4"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/Header4"
+            android:layout_marginTop="18dp"
+            android:text="CAFE"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/cafe2Text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="250dp"
+            android:layout_below="@id/Header4"
+            android:layout_marginTop="18dp"
+            android:text="-$2.50"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/amount2Cafe"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/food"
+            android:layout_below="@id/foodIcon4"
+            android:layout_alignLeft="@id/houseIcon"
+            android:layout_marginTop="15dp"
+            android:id="@+id/foodIcon5"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/foodIcon4"
+            android:layout_alignLeft="@id/rentText"
+            android:layout_marginTop="18dp"
+            android:text="MARTIN'S GROCERY"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="15dp"
+            android:id="@+id/martinsText"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/foodIcon4"
+            android:layout_alignLeft="@id/amountRent"
+            android:layout_marginTop="18dp"
+            android:text="-$35.45"
+            android:textColor="@color/colorMaroon"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/martinsAmount"/>
+
 
     </RelativeLayout>
 </ScrollView>
