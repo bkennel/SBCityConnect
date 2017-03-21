@@ -117,15 +117,4 @@
         android:textSize="10dp"
         android:textColor="@color/colorMaroon"/>
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/greenIcon"
-        android:layout_alignLeft="@+id/greenIcon"
-        android:layout_marginTop="20dp"
-        android:id="@+id/progressBar2"
-        android:background="@color/colorDarkGreen"
-        android:progress="20"/>
-
 </RelativeLayout>

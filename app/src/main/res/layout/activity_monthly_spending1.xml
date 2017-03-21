@@ -120,16 +120,17 @@
             android:id="@+id/thisMonthText"/>
 
         <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="20dp"
-        android:background="@drawable/gray_box_header"
-        android:text="Today"
-        android:textSize="18dp"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:layout_below="@id/toolbar"
-        android:layout_marginTop="120dp"
-        android:id="@+id/todayHeader"/>
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/gray_box_header"
+            android:text="TODAY"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_below="@id/toolbar"
+            android:layout_marginTop="120dp"
+            android:id="@+id/todayHeader"
+            android:textStyle="bold"/>
 
         <ImageView
             android:layout_width="20dp"
@@ -168,6 +169,7 @@
             android:layout_height="20dp"
             android:background="@drawable/gray_box_header"
             android:text="JAN 27, 2017"
+            android:textStyle="bold"
             android:textSize="18dp"
             android:textAlignment="center"
             android:textColor="#ffffff"

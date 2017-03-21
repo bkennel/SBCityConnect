@@ -1,6 +1,7 @@
 package mobilend.sbcityconnect;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -9,11 +10,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
-
+    private String user = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,11 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
+
+        user = getIntent().getStringExtra("USERNAME");
+
+        TextView tv1 = (TextView)findViewById(R.id.nameTitle);
+        tv1.setText(user);
 
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new OnClickListener() {
@@ -47,32 +54,33 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         switch(item.getItemId()){
             case R.id.life:
                 //TODO - implement submenu
-                Toast.makeText(this,"Life",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.calendar:
-                startActivity(new Intent(this, CalendarActivity.class));
+                Intent intent = new Intent(this, CalendarActivity.class);
+                intent.putExtra("USERNAME", user);
+                startActivity(intent);
                 return true;
             case R.id.cityAssistance:
                 startActivity(new Intent(this, CityAssistanceActivity.class));
                 return true;
             case R.id.payments:
                 //go to payments
-                startActivity(new Intent(this, EPaymentActivity.class));
+                Intent intent2 = new Intent(this, EPaymentActivity.class);
+                intent2.putExtra("USERNAME", user);
+                startActivity(intent2);
                 return true;
             case R.id.moneyManagement:
-                startActivity(new Intent(this, MoneyManagementHomeActivity.class));
+                Intent intent3 = new Intent(this, MoneyManagementHomeActivity.class);
+                intent3.putExtra("USERNAME", user);
+                startActivity(intent3);
                 return true;
             case R.id.work:
-                Toast.makeText(this,"Work",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.business:
-                Toast.makeText(this,"Business",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.government:
-                Toast.makeText(this,"Government",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.settings:
-                Toast.makeText(this,"Settings",Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.logout:
                 startActivity(new Intent(this, MainActivity.class));
@@ -97,6 +105,10 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void goToCalendar(View view){
         Intent intent = new Intent(this, CalendarHomeActivity.class);
+        startActivity(intent);
+
+        //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+        intent.putExtra("USERNAME", user);
         startActivity(intent);
     }
 }
