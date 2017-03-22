@@ -387,7 +387,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (passEmail.equals("JParker@gmail.com")){
             user = "Joseph";
         }
-
+        if (passEmail.equals("JFischer@gmail.com")){
+            user = "Janice";
+        }
         intent.putExtra("USERNAME", user);
         startActivity(intent);
     }

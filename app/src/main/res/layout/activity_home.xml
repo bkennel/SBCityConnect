@@ -39,7 +39,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DASHBOARD"
                 android:id="@+id/toolbarTitle"
                 android:layout_gravity="center"
                 android:textColor="@color/colorBlueGreen"
@@ -69,7 +68,7 @@
         android:layout_toEndOf="@+id/weatherImage"
         android:id="@+id/textView4"
         android:textColor="@android:color/white"
-        android:textSize="36sp"
+        android:textSize="45sp"
         android:textStyle="bold"/>
 
     <!--<Button
@@ -147,7 +146,4 @@
         android:paddingBottom="12dp"
         android:layout_centerHorizontal="true"
         android:gravity="center" />
-
-
-
 </RelativeLayout>
