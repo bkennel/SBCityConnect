@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -22,6 +23,8 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
     ImageButton menuButton;
     private Spinner paymentTypeSpinner, addressSpinner, accountSpinner;
     String user = "";
+    Boolean Credit = true;
+    Boolean Bank = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,27 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         paymentTypeSpinner.setAdapter(dataAdapter);
+
+        paymentTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Credit Card"))
+                {
+                    Credit = true;
+                    Bank = false;
+                }
+                else if (selectedItem.equals("Bank Account")) {
+                    Bank = true;
+                    Credit = false;
+                }
+
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+            }
+        });
     }
     public void addItemsAddressSpinner(){
         addressSpinner = (Spinner) findViewById(R.id.BillingAddressSpinner);
@@ -103,7 +127,31 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         addressSpinner.setAdapter(dataAdapter);
+
+        addressSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Home: Diamond Ave"))
+                {
+                    TextView tv1 = (TextView) findViewById(R.id.billingAddress);
+                    tv1.setText("735 Diamond Ave\nSB, IN 46628");
+                }
+                else {
+                    TextView tv2 = (TextView) findViewById(R.id.billingAddress);
+                    tv2.setText("");
+                }
+
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                TextView tv3 = (TextView) findViewById(R.id.billingAddress);
+                tv3.setText("");
+            }
+        });
     }
+
     public void addItemsAccountSpinner(){
         accountSpinner = (Spinner) findViewById(R.id.PaymentAccountSpinner);
         List<String> list = new ArrayList<String>();
@@ -120,6 +168,33 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         accountSpinner.setAdapter(dataAdapter);
+
+        accountSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Visa ending in 6789"))
+                {
+                    TextView tv1 = (TextView) findViewById(R.id.addAccount);
+                    tv1.setText("Visa ending in 6789");
+                }
+                else if (selectedItem.equals("Bank Account ending in 4333")){
+                    TextView tv3 = (TextView) findViewById(R.id.addAccount);
+                    tv3.setText("Bank Account ending in 4333");
+                }
+                else {
+                    TextView tv2 = (TextView) findViewById(R.id.addAccount);
+                    tv2.setText("");
+                }
+
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                TextView tv3 = (TextView) findViewById(R.id.billingAddress);
+                tv3.setText("");
+            }
+        });
     }
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu){
