@@ -1,5 +1,6 @@
 package mobilend.sbcityconnect;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
@@ -25,6 +27,9 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
     String user = "";
     Boolean Credit = true;
     Boolean Bank = true;
+    private int month;
+    private int year;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,8 +81,22 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
             //tv1.setText("735 Diamond Ave\nSB, IN 46628");
 
         }*/
+        final EditText edit =  (EditText) findViewById(R.id.editText);
+
+        edit.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        String text = edit.getText().toString();
+                        TextView tv2 = (TextView) findViewById(R.id.addAmount);
+                        tv2.setText("$" + text);
+                    }
+                });
 
     }
+
+
 
     public void addItemsPaymentTypeSpinner(){
         paymentTypeSpinner = (Spinner) findViewById(R.id.PaymentTypeSpinner);
@@ -196,6 +215,7 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
             }
         });
     }
+
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater=getMenuInflater();
