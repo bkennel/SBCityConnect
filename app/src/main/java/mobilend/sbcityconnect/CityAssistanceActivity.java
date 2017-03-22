@@ -11,16 +11,22 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class CityAssistanceActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     private ImageButton menuButton;
     private Spinner requestSpinner, issueSpinner;
+    private LinearLayout requests;
+    private int numRequests;
 
     static final int REQUEST_IMAGE_CAPTURE=1;
 
@@ -45,6 +51,9 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
         });
         addItemsRequestSpinner();
         //set items in issue spinner depending on first selection
+
+        requests=(LinearLayout) findViewById(R.id.requestLayout);
+        numRequests=0;
     }
 
     public void addItemsRequestSpinner(){
@@ -67,7 +76,40 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
     }
 
     public void makeRequest(View view){
-        //Make request
+        RequestDisplay rd=new RequestDisplay(getApplicationContext());
+        //inflate display into linearlayout
+        LinearLayout requestLayout=(LinearLayout) findViewById(R.id.requestLayout);
+        switch(numRequests){
+            case 0:
+                requestLayout=(LinearLayout) findViewById(R.id.request1);
+                break;
+            case 1:
+                requestLayout=(LinearLayout) findViewById(R.id.request2);
+                break;
+            case 2:
+                requestLayout=(LinearLayout) findViewById(R.id.request3);
+                break;
+            default:
+                break;
+        }
+        rd.inflateComponent(getApplicationContext(),requestLayout);
+
+        //rd.inflateComponent(getApplicationContext(),(RelativeLayout)findViewById(R.id.activity_city_assistance));
+        //requests.addView(rd);
+        //still identifies first requestLayout after second is added
+        String date=getDate();
+        rd.setDateText(date);
+        rd.setRequest(requestSpinner.getSelectedItem().toString());
+        rd.setStatus(RequestDisplay.Status.SUBMITTED);
+        numRequests++;
+
+    }
+
+    public String getDate(){
+        Calendar cal=Calendar.getInstance();
+        SimpleDateFormat d=new SimpleDateFormat("MM/dd");
+        return d.format(cal.getTime());
+
     }
 
     private void dispatchPictureIntent(){
