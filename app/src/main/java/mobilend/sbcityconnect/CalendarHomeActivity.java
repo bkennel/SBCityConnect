@@ -11,6 +11,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ExpandableListView;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
@@ -30,6 +33,12 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
     ArrayList<CalendarEvent> events;
     ImageButton menuButton;
     String user = "";
+
+    //For dropdown menu
+    ExpandableListAdapter listAdapter;
+    ExpandableListView expListView;
+    List<String> headerList;
+    HashMap<String, List<String>> childList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +59,33 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(CalendarHomeActivity.this, menuButton);
+                /*PopupMenu popup = new PopupMenu(CalendarHomeActivity.this, menuButton);
                 popup.setOnMenuItemClickListener(CalendarHomeActivity.this);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.show();
+                popup.show();*/
+
+                LayoutInflater inflater=(LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
+                final PopupWindow menuWindow=new PopupWindow(menuView,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+
+                expListView=(ExpandableListView) menuView.findViewById(R.id.dropdown);
+                prepareListData();
+                listAdapter=new ExpandableListAdapter(menuView.getContext(),headerList,childList);
+                expListView.setAdapter(listAdapter);
+                expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                    @Override
+                    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                        String selection=childList.get(headerList.get(groupPosition)).get(childPosition);
+                        processMenuSelection(selection);
+                        //Toast.makeText(getApplicationContext(),selection, Toast.LENGTH_SHORT).show();
+                        menuWindow.dismiss();
+                        return false;
+                    }
+                });
+
+                menuWindow.setFocusable(true);
+                menuWindow.update();
+                menuWindow.showAsDropDown(menuButton);
             }
         });
 
@@ -104,6 +136,44 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
 
             }
         });
+    }
+
+    private void prepareListData(){
+        headerList=new ArrayList<String>();
+        childList=new HashMap<String, List<String>>();
+        //add headers
+        headerList.add("LIFE");
+        headerList.add("WORK");
+        headerList.add("BUSINESS");
+        headerList.add("GOVERNMENT");
+        headerList.add("SETTINGS");
+        //add subcategories
+        List<String> life=new ArrayList<String>();
+        life.add("Calendar");
+        life.add("City Assistance");
+        life.add("E-Payment");
+        life.add("Mobile Banking");
+        life.add("Money Management");
+        List<String> work=new ArrayList<String>();
+        work.add("Open Positions");
+        work.add("Job Resources");
+        List<String> business=new ArrayList<String>();
+        business.add("Business Directory");
+        business.add("Business Resources");
+        business.add("Chamber of Commerce");
+        List<String> government=new ArrayList<String>();
+        government.add("Calendar");
+        government.add("Upcoming Meetings");
+        government.add("Recent Meetings");
+        List<String> settings=new ArrayList<String>();
+        settings.add("Logout");
+        //Add other submenus or app crashes
+
+        childList.put(headerList.get(0),life);
+        childList.put(headerList.get(1),work);
+        childList.put(headerList.get(2),business);
+        childList.put(headerList.get(3),government);
+        childList.put(headerList.get(4),settings);
     }
 
     public void addEvent(CalendarEvent e){
@@ -159,6 +229,37 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
 
         }
         return false;
+    }
+
+    public boolean processMenuSelection(String s){
+        Intent intent;
+        switch(s){
+            case "Calendar":
+                intent = new Intent(this, CalendarHomeActivity.class);
+                intent.putExtra("USERNAME", user);
+                startActivity(intent);
+                return true;
+            case "City Assistance":
+                intent = new Intent(this, CityAssistanceActivity.class);
+                intent.putExtra("USERNAME", user);
+                startActivity(intent);
+                return true;
+            case "E-Payment":
+                intent = new Intent(this, EPaymentActivity.class);
+                intent.putExtra("USERNAME", user);
+                startActivity(intent);
+                return true;
+            case "Money Management":
+                intent = new Intent(this, MoneyManagementHomeActivity.class);
+                intent.putExtra("USERNAME", user);
+                startActivity(intent);
+                return true;
+            case "Logout":
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+            default:
+                return false;
+        }
     }
 
     public void goToMonthlyCalendar(View view){
