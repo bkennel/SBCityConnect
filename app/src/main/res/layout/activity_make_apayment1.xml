@@ -179,7 +179,7 @@
             android:layout_height="wrap_content"
             android:text="PAYMENT SUMMARY"
             android:layout_below="@+id/datePicker"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
             android:textSize="15dp"
@@ -190,14 +190,60 @@
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="400dp"
+            android:layout_height="350dp"
             android:background="@drawable/summary_box"
             android:layout_below="@+id/textSummary"
-            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:id="@+id/summaryBox"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Billing Address:"
+            android:textColor="@color/colorDarkGreen"
+            android:layout_below="@id/textSummary"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:id="@+id/address"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:lines="2"
+            android:minLines="2"
+            android:textColor="@color/colorDarkGray"
+            android:layout_below="@id/address"
+            android:layout_alignLeft="@+id/address"
+            android:textStyle="bold"
+            android:id="@+id/billingAddress"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Amount:"
+            android:textColor="@color/colorDarkGreen"
+            android:layout_below="@id/address"
+            android:layout_alignLeft="@id/address"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold"
+            android:id="@+id/amount"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/colorDarkGreen"
+            android:layout_below="@id/amount"
+            android:layout_alignLeft="@id/amount"
+            android:textStyle="bold"
+            android:id="@+id/addAmount"/>
 
         <Button
             android:layout_width="fill_parent"

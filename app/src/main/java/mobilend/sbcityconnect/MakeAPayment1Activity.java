@@ -7,9 +7,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,38 +22,66 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
     ImageButton menuButton;
     private Spinner paymentTypeSpinner, addressSpinner, accountSpinner;
     String user = "";
+
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_make_apayment1);
-            //Intent intent = getIntent();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_make_apayment1);
+        //Intent intent = getIntent();
 
-            user = getIntent().getStringExtra("USERNAME");
+        user = getIntent().getStringExtra("USERNAME");
 
-            Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
-            setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle(null);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
-            menuButton=(ImageButton) findViewById(R.id.menuButton);
-            menuButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    PopupMenu popup = new PopupMenu(MakeAPayment1Activity.this, menuButton);
-                    popup.setOnMenuItemClickListener(MakeAPayment1Activity.this);
-                    popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                    popup.show();
-                }
-            });
+        menuButton = (ImageButton) findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popup = new PopupMenu(MakeAPayment1Activity.this, menuButton);
+                popup.setOnMenuItemClickListener(MakeAPayment1Activity.this);
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                popup.show();
+            }
+        });
         addItemsPaymentTypeSpinner();
         addItemsAddressSpinner();
         addItemsAccountSpinner();
+
+        /*
+        Spinner spinner = (Spinner)findViewById(R.id.PaymentTypeSpinner);
+        String paymentType = spinner.getSelectedItem().toString();
+
+        Spinner spinner2 = (Spinner)findViewById(R.id.BillingAddressSpinner);
+        String billingAddress = spinner.getSelectedItem().toString();
+
+        Spinner spinner3 = (Spinner)findViewById(R.id.PaymentAccountSpinner);
+        String paymentAccount = spinner.getSelectedItem().toString();
+
+        TextView tv1 = (TextView) findViewById(R.id.billingAddress);
+        tv1.setText(paymentType);
+
+        final EditText edit =  (EditText) findViewById(R.id.editText);
+        edit.getText().toString();
+
+        TextView tv2 = (TextView) findViewById(R.id.addAmount);
+        tv1.setText("$" + edit);
+
+        if (billingAddress.equals("Home: Diamond Ave")) {
+            //TextView tv1 = (TextView) findViewById(R.id.billingAddress);
+            //tv1.setText("735 Diamond Ave\nSB, IN 46628");
+
+        }*/
+
     }
+
     public void addItemsPaymentTypeSpinner(){
         paymentTypeSpinner = (Spinner) findViewById(R.id.PaymentTypeSpinner);
         List<String> list = new ArrayList<String>();
         list.add("Payment Type");
         list.add("Credit Card");
-        list.add("Paypal");
+        list.add("Bank Account");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -61,8 +91,14 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         addressSpinner = (Spinner) findViewById(R.id.BillingAddressSpinner);
         List<String> list = new ArrayList<String>();
         list.add("Billing Address");
-        list.add("Address 1");
-        list.add("Address 2");
+        if (user.equals("Janice")){
+            list.add("Home: Diamond Ave");
+        }
+        else {
+            list.add("Address 1");
+            list.add("Address 2");
+        }
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -72,8 +108,14 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         accountSpinner = (Spinner) findViewById(R.id.PaymentAccountSpinner);
         List<String> list = new ArrayList<String>();
         list.add("Payment Account");
-        list.add("Account 1");
-        list.add("Account 2");
+        if (user.equals("Janice")){
+            list.add("Visa ending in 6789");
+            list.add("Bank Account ending in 4333");
+        }
+        else {
+            list.add("Account 1");
+            list.add("Account 2");
+        }
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
