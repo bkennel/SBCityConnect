@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 //TODO - implement submenu
                 return true;
             case R.id.calendar:
-                Intent intent = new Intent(this, CalendarActivity.class);
+                Intent intent = new Intent(this, CalendarHomeActivity.class);
                 intent.putExtra("USERNAME", user);
                 startActivity(intent);
                 return true;

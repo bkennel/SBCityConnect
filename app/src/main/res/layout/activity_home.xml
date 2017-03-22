@@ -51,7 +51,28 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <Button
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/weatherImage"
+        android:src="@mipmap/sunny"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/toolbar"
+        android:background="@android:color/transparent" />
+
+    <TextView
+        android:text="45&#xb0;F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/welcomeTitle"
+        android:layout_toRightOf="@+id/weatherImage"
+        android:layout_toEndOf="@+id/weatherImage"
+        android:id="@+id/textView4"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"/>
+
+    <!--<Button
         android:text="Calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,7 +83,7 @@
         android:onClick="goToCalendar"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" />-->
 
     <TextView
         android:layout_width="match_parent"
@@ -72,10 +93,11 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="24sp"
         android:background="@android:color/background_light"
-        android:layout_above="@+id/calendarButton"
+        android:layout_below="@+id/mainmessage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp" />
+        android:layout_marginBottom="13dp"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
@@ -86,9 +108,10 @@
         android:textColor="@color/colorBusiness"
         android:textSize="24sp"
         android:background="@android:color/background_light"
-        android:layout_above="@+id/submessage"
+        android:layout_below="@+id/nameTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:gravity="center" />
 
     <TextView
         android:layout_width="match_parent"
@@ -97,7 +120,7 @@
         android:id="@+id/nameTitle"
         android:textSize="30sp"
         android:textColor="@color/colorBusiness"
-        android:layout_above="@+id/mainmessage"
+        android:layout_below="@+id/welcomeTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="11dp" />
@@ -110,7 +133,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:layout_above="@+id/nameTitle"
+        android:layout_below="@+id/weatherImage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -118,10 +141,13 @@
         android:id="@+id/event1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/calendarButton"
+        android:layout_below="@+id/submessage"
         android:layout_gravity="center"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
+
+
 
 </RelativeLayout>
