@@ -20,7 +20,7 @@ import java.util.List;
 
 public class BudgetBuilderActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
-    private Spinner categorySpinner, amountSpinner, subCategorySpinner, subAmountSpinner;
+    private Spinner categorySpinner, subCategorySpinner;
     String user = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +50,7 @@ public class BudgetBuilderActivity extends AppCompatActivity implements PopupMen
             }
         });
         addItemsCategorySpinner();
-        addItemsAmountSpinner();
         addItemsSubCategorySpinner();
-        addSubAmountSpinner();
     }
 
     public void addItemsCategorySpinner(){
@@ -61,23 +59,14 @@ public class BudgetBuilderActivity extends AppCompatActivity implements PopupMen
         list.add("Education");
         list.add("Food");
         list.add("Rent");
+        list.add("Utilities");
+        list.add("Leisure");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(dataAdapter);
     }
 
-    public void addItemsAmountSpinner(){
-        amountSpinner = (Spinner) findViewById(R.id.AmountSpinner);
-        List<String> list = new ArrayList<String>();
-        list.add("Amount");
-        list.add("$10");
-        list.add("$20");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        amountSpinner.setAdapter(dataAdapter);
-    }
 
     public void addItemsSubCategorySpinner(){
         subCategorySpinner = (Spinner) findViewById(R.id.topSpinner);
@@ -89,18 +78,6 @@ public class BudgetBuilderActivity extends AppCompatActivity implements PopupMen
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subCategorySpinner.setAdapter(dataAdapter);
-    }
-
-    public void addSubAmountSpinner(){
-        subAmountSpinner = (Spinner) findViewById(R.id.belowSpinner);
-        List<String> list = new ArrayList<String>();
-        list.add("Amount");
-        list.add("$10");
-        list.add("$20");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        subAmountSpinner.setAdapter(dataAdapter);
     }
 
     public boolean onMenuItemClick(MenuItem item) {

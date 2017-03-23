@@ -2,6 +2,7 @@ package mobilend.sbcityconnect;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,13 +24,18 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        user = getIntent().getStringExtra("USERNAME");
 
+        if(user.equals("Robert")) {
+            setContentView(R.layout.activity_home_robert);
+        }
+        else{
+            setContentView(R.layout.activity_home);
+        }
         //Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         //getSupportActionBar().setTitle(null);
 
-        user = getIntent().getStringExtra("USERNAME");
 
         TextView tv1 = (TextView)findViewById(R.id.nameTitle);
         tv1.setText(user);
@@ -52,10 +59,14 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if(user.equals("Janice")){
             TextView tv2 = (TextView)findViewById(R.id.submessage);
             tv2.setText("You Saved $365 this year");
+
+            ImageView w1 = (ImageView)findViewById(R.id.weatherImage);
+            w1.setImageResource(R.mipmap.thunderstorm);
         }
         else if(user.equals("Robert")){
             TextView tv3 = (TextView)findViewById(R.id.submessage);
             tv3.setText("You Saved $1,025 this year");
+
         }
         else if(user.equals("Joseph")){
             TextView tv4 = (TextView)findViewById(R.id.submessage);

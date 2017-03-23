@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="16dp"
+    tools:context="mobilend.sbcityconnect.HomeActivity"
+    android:background="@color/colorBackgroundDarkBlue" >
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorBackgroundDarkBlue"
+        android:id="@+id/menuButton"
+        android:src="@drawable/menu_icon"
+        android:width="50dp"
+        android:height="50dp"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/weatherImage"
+        android:src="@mipmap/sunny"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="70&#xb0;F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/welcomeTitle"
+        android:layout_toRightOf="@+id/weatherImage"
+        android:layout_toEndOf="@+id/weatherImage"
+        android:id="@+id/textView4"
+        android:textColor="@android:color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"/>
+
+    <!--<Button
+        android:text="Calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarButton"
+        android:background="@color/colorMenu"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:onClick="goToCalendar"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You saved $365 this year"
+        android:id="@+id/submessage"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="24sp"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/mainmessage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:color="@android:color/white"
+        android:text="CONGRATULATIONS"
+        android:id="@+id/mainmessage"
+        android:textColor="@color/colorBusiness"
+        android:textSize="24sp"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/nameTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JANE!"
+        android:id="@+id/nameTitle"
+        android:textSize="30sp"
+        android:textColor="@color/colorBusiness"
+        android:layout_below="@+id/welcomeTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
+
+    <TextView
+        android:text="Welcome back"
+        android:layout_width="match_parent"
+        android:id="@+id/welcomeTitle"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_below="@+id/weatherImage"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="MAR"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:id="@+id/month2"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/submessage"
+        />
+
+    <TextView
+        android:text="31"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date2"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="    5K RUN/WALK"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_below="@id/submessage"
+        android:id="@+id/title2"
+        android:textSize="24dp"
+        android:layout_toRightOf="@+id/month2"
+        android:layout_toEndOf="@+id/month2"
+        android:background="@android:color/white"/>
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/submessage"
+        android:layout_alignLeft="@id/month2"
+        android:layout_height="1dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/line2"
+        />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:text="INFO"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginLeft="310dp"
+        android:textSize="15dp"
+        android:layout_below="@id/submessage"
+        android:layout_marginTop="21dp"
+        />
+
+    <TextView
+        android:text="APR"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:id="@+id/month3"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/month2"
+        android:layout_marginTop="43dp"
+        android:layout_alignLeft="@id/month"/>
+
+    <TextView
+        android:text="1"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date3"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="    FARMERS MARKET"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textAlignment="textStart"
+        android:layout_alignLeft="@id/title2"
+        android:gravity="center"
+        android:layout_below="@id/date2"
+        android:id="@+id/title3"
+        android:textSize="24dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/white"/>
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/title2"
+        android:layout_alignLeft="@id/month"
+        android:layout_height="1dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/line3"
+        />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:text="INFO"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginLeft="33dp"
+        android:textSize="15dp"
+        android:layout_alignLeft="@id/line2"
+        android:layout_below="@id/title2"
+        android:layout_marginTop="23dp"
+        />
+</RelativeLayout>
