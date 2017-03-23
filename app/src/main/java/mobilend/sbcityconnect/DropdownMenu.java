@@ -22,6 +22,8 @@ public class DropdownMenu extends PopupWindow {
     ExpandableListView expListView;
     List<String> headerList;
     HashMap<String, List<String>> childList;
+    HashMap<String, List<String>> child2List;
+
     Activity host;
     String user;
 
@@ -61,6 +63,7 @@ public class DropdownMenu extends PopupWindow {
     private void prepareListData(){
         headerList=new ArrayList<String>();
         childList=new HashMap<String, List<String>>();
+        child2List =new HashMap<String, List<String>>();
         //add headers
         headerList.add("LIFE");
         headerList.add("WORK");
@@ -76,6 +79,10 @@ public class DropdownMenu extends PopupWindow {
         life.add("E-Payment");
         life.add("Mobile Banking");
         life.add("Money Management");
+        List<String> money=new ArrayList<>();
+        money.add("Budget Builder");
+        money.add("Monthly Budget");
+        money.add("Monthly Spending");
         List<String> work=new ArrayList<String>();
         work.add("Open Positions");
         work.add("Job Resources");

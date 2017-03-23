@@ -9,55 +9,24 @@
     tools:context="mobilend.sbcityconnect.HomeActivity"
     android:background="@color/colorBackgroundDarkBlue" >
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorBackgroundDarkBlue"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="?attr/actionBarSize"
-            android:orientation="horizontal"
-            android:dividerPadding="8dp"
-            >
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/colorBackgroundDarkBlue"
-                android:id="@+id/menuButton"
-                android:src="@drawable/menu_icon"
-                android:width="50dp"
-                android:height="50dp"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/toolbarTitle"
-                android:layout_gravity="center"
-                android:textColor="@color/colorBlueGreen"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.Toolbar>
+     <ImageButton
+         android:layout_width="50dp"
+         android:layout_height="50dp"
+         android:background="@color/colorBackgroundDarkBlue"
+         android:id="@+id/menuButton"
+         android:src="@drawable/menu_icon"
+         android:width="50dp"
+         android:height="50dp"
+         />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/weatherImage"
         android:src="@mipmap/sunny"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/toolbar"
-        android:background="@android:color/transparent" />
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="45&#xb0;F"
@@ -136,14 +105,199 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <mobilend.sbcityconnect.EventDisplay
-        android:id="@+id/event1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/submessage"
-        android:layout_gravity="center"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center" />
+    <TextView
+        android:text="MAR"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:id="@+id/month"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/submessage"
+        />
+
+    <TextView
+        android:text="29"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="    WATER BILL DUE"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textAlignment="textStart"
+        android:gravity="center"
+        android:layout_below="@id/submessage"
+        android:layout_toRightOf="@+id/month"
+        android:layout_toEndOf="@+id/month"
+        android:id="@+id/title"
+        android:textSize="24dp"
+        android:background="@android:color/white"/>
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/submessage"
+        android:layout_alignLeft="@id/month"
+        android:layout_height="1dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/line1"
+        />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:text="PAY"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorMaroon"
+        android:layout_marginLeft="33dp"
+        android:textSize="15dp"
+        android:layout_alignLeft="@id/line1"
+        android:layout_below="@id/submessage"
+        android:layout_marginTop="20dp"
+        android:onClick="goToPayment"
+
+        />
+
+    <TextView
+        android:text="MAR"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:id="@+id/month2"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/month"
+        android:layout_marginTop="43dp"
+        android:layout_alignLeft="@id/month"/>
+
+    <TextView
+        android:text="31"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date2"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="    5K RUN/WALK"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textAlignment="textStart"
+        android:layout_alignLeft="@id/title"
+        android:gravity="center"
+        android:layout_below="@id/date"
+        android:id="@+id/title2"
+        android:textSize="24dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/white"/>
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/title"
+        android:layout_alignLeft="@id/month"
+        android:layout_height="1dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/line2"
+        />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:text="INFO"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginLeft="33dp"
+        android:textSize="15dp"
+        android:layout_alignLeft="@id/line1"
+        android:layout_below="@id/title"
+        android:layout_marginTop="23dp"
+        />
+
+    <TextView
+        android:text="APR"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:id="@+id/month3"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/month2"
+        android:layout_marginTop="43dp"
+        android:layout_alignLeft="@id/month"/>
+
+    <TextView
+        android:text="1"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/month3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/date3"
+        android:gravity="center"
+        android:background="@color/colorDarkGreen"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="    FARMERS MARKET"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:textAlignment="textStart"
+        android:layout_alignLeft="@id/title2"
+        android:gravity="center"
+        android:layout_below="@id/date2"
+        android:id="@+id/title3"
+        android:textSize="24dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/white"/>
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/title2"
+        android:layout_alignLeft="@id/month"
+        android:layout_height="1dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/line3"
+        />
+
+    <Button
+        android:layout_width="35dp"
+        android:layout_height="20dp"
+        android:text="INFO"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorLightBlue"
+        android:layout_marginLeft="33dp"
+        android:textSize="15dp"
+        android:layout_alignLeft="@id/line2"
+        android:layout_below="@id/title2"
+        android:layout_marginTop="23dp"
+        />
 </RelativeLayout>

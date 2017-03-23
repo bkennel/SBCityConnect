@@ -24,9 +24,9 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
+        //Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+        //getSupportActionBar().setTitle(null);
 
         user = getIntent().getStringExtra("USERNAME");
 
@@ -49,6 +49,18 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
+        if(user.equals("Janice")){
+            TextView tv2 = (TextView)findViewById(R.id.submessage);
+            tv2.setText("You Saved $365 this year");
+        }
+        else if(user.equals("Robert")){
+            TextView tv3 = (TextView)findViewById(R.id.submessage);
+            tv3.setText("You Saved $1,025 this year");
+        }
+        else if(user.equals("Joseph")){
+            TextView tv4 = (TextView)findViewById(R.id.submessage);
+            tv4.setText("You Saved $550 this year");
+        }
     }
 
 /*    @Override
@@ -113,6 +125,15 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void goToCalendar(View view){
         Intent intent = new Intent(this, CalendarHomeActivity.class);
+        startActivity(intent);
+
+        //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
+        intent.putExtra("USERNAME", user);
+        startActivity(intent);
+    }
+
+    public void goToPayment(View view){
+        Intent intent = new Intent(this, MakeAPayment1Activity.class);
         startActivity(intent);
 
         //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
