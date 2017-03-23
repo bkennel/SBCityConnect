@@ -27,7 +27,7 @@ public class DropdownMenu extends PopupWindow {
 
     //final PopupWindow menuWindow=new PopupWindow(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-    public DropdownMenu(View contentView, int width, int height){
+    public DropdownMenu(final View contentView, int width, int height){
         super(contentView,width,height);
         host=(Activity) contentView.getContext();
 
@@ -40,8 +40,16 @@ public class DropdownMenu extends PopupWindow {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 String selection=childList.get(headerList.get(groupPosition)).get(childPosition);
                 processMenuSelection(selection);
-                //Toast.makeText(getApplicationContext(),selection, Toast.LENGTH_SHORT).show();
                 return false;
+            }
+        });
+        expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if(listAdapter.getChildrenCount(groupPosition)==0) {
+                    String selection = headerList.get(groupPosition);
+                    processMenuSelection(selection);
+                }
             }
         });
     }
@@ -59,6 +67,7 @@ public class DropdownMenu extends PopupWindow {
         headerList.add("BUSINESS");
         headerList.add("GOVERNMENT");
         headerList.add("SETTINGS");
+        headerList.add("MY DASHBOARD");
         headerList.add("LOGOUT");
         //add subcategories
         List<String> life=new ArrayList<String>();
@@ -78,17 +87,14 @@ public class DropdownMenu extends PopupWindow {
         government.add("Calendar");
         government.add("Upcoming Meetings");
         government.add("Recent Meetings");
-        List<String> settings=new ArrayList<String>();
-        settings.add("Logout");
 
         childList.put(headerList.get(0),life);
         childList.put(headerList.get(1),work);
         childList.put(headerList.get(2),business);
         childList.put(headerList.get(3),government);
-        childList.put(headerList.get(4),settings);
     }
 
-    public boolean processMenuSelection(String s){
+    private boolean processMenuSelection(String s){
         Intent intent;
         switch(s){
             case "Calendar":
@@ -111,8 +117,13 @@ public class DropdownMenu extends PopupWindow {
                 intent.putExtra("USERNAME", this.user);
                 host.startActivity(intent);
                 return true;
-            case "Logout":
+            case "LOGOUT":
                 host.startActivity(new Intent(host, MainActivity.class));
+                return true;
+            case "MY DASHBOARD":
+                intent = new Intent(host, HomeActivity.class);
+                intent.putExtra("USERNAME", this.user);
+                host.startActivity(intent);
                 return true;
             default:
                 return false;
