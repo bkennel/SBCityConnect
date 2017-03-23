@@ -1,5 +1,6 @@
 package mobilend.sbcityconnect;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.provider.MediaStore;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -23,12 +25,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class CityAssistanceActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     private ImageButton menuButton;
     private Spinner requestSpinner, issueSpinner;
     private LinearLayout requests;
     private int numRequests;
+    private Context context;
     String user="";
 
     static final int REQUEST_IMAGE_CAPTURE=1;
@@ -37,6 +41,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_assistance);
+        context=getApplicationContext();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -66,6 +71,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
 
     public void addItemsRequestSpinner(){
         requestSpinner = (Spinner) findViewById(R.id.requestTypeSpinner);
+        issueSpinner = (Spinner) findViewById(R.id.issueSpinner);
         List<String> list = new ArrayList<String>();
         list.add("Garbage");
         list.add("Graffiti");
@@ -73,10 +79,48 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
         list.add("Police and Fire");
         list.add("Road Damage");
         list.add("Streets and Sidewalks");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+        final ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         requestSpinner.setAdapter(dataAdapter);
+
+        requestSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String item=(String) parent.getItemAtPosition(position);
+                List<String> options=new ArrayList<>();
+                switch(item){
+                    case "Garbage":
+                        options.add("Debris Pickup");
+                        break;
+                    case "Graffiti":
+                        options.add("Graffiti");
+                        break;
+                    case "Parks and Trees":
+                        options.add("Fallen tree");
+                        break;
+                    case "Police and Fire":
+                        options.add("Request police assistance");
+                        options.add("Request fire department");
+                        break;
+                    case "Road Damage":
+                        options.add("Pothole");
+                        options.add("Road flooding");
+                        break;
+                    case "Streets and Sidewalks":
+                        options.add("Obstructed sidewalk");
+                        break;
+                    default:
+                        break;
+                }
+                final ArrayAdapter<String> issueAdapter=new ArrayAdapter<>(context,android.R.layout.simple_spinner_item,options);
+                issueAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                issueSpinner.setAdapter(issueAdapter);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
     }
 
     public void takePicture(View view){
@@ -85,7 +129,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
 
     public void makeRequest(View view){
         RequestDisplay rd=new RequestDisplay(getApplicationContext());
-        //inflate display into linearlayout
+        //inflate display into LinearLayout
         LinearLayout requestLayout=(LinearLayout) findViewById(R.id.requestLayout);
         switch(numRequests){
             case 0:
@@ -97,27 +141,39 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
             case 2:
                 requestLayout=(LinearLayout) findViewById(R.id.request3);
                 break;
+            case 3:
+                requestLayout=(LinearLayout) findViewById(R.id.request4);
+                break;
+            case 4:
+                requestLayout=(LinearLayout) findViewById(R.id.request5);
+                break;
+            case 5:
+                requestLayout=(LinearLayout) findViewById(R.id.request6);
+                break;
+            case 6:
+                requestLayout=(LinearLayout) findViewById(R.id.request7);
+                break;
+            case 7:
+                requestLayout=(LinearLayout) findViewById(R.id.request8);
+                break;
             default:
                 break;
         }
-        rd.inflateComponent(getApplicationContext(),requestLayout);
-
-        //rd.inflateComponent(getApplicationContext(),(RelativeLayout)findViewById(R.id.activity_city_assistance));
-        //requests.addView(rd);
-        //still identifies first requestLayout after second is added
-        String date=getDate();
-        rd.setDateText(date);
-        rd.setRequest(requestSpinner.getSelectedItem().toString());
-        rd.setStatus(RequestDisplay.Status.SUBMITTED);
-        numRequests++;
+        if(numRequests<8) {
+            rd.inflateComponent(getApplicationContext(), requestLayout);
+            String date = getDate();
+            rd.setDateText(date);
+            rd.setRequest(issueSpinner.getSelectedItem().toString());
+            rd.setStatus(RequestDisplay.Status.SUBMITTED);
+            numRequests++;
+        }
 
     }
 
     public String getDate(){
         Calendar cal=Calendar.getInstance();
-        SimpleDateFormat d=new SimpleDateFormat("MM/dd");
+        SimpleDateFormat d=new SimpleDateFormat("MM/dd", Locale.US);
         return d.format(cal.getTime());
-
     }
 
     private void dispatchPictureIntent(){

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,7 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
 

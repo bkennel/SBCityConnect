@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_city_assistance"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="mobilend.sbcityconnect.CityAssistanceActivity">
+
+    <RelativeLayout
+        android:id="@+id/ca_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -133,7 +138,6 @@
         android:id="@+id/locationText"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="Enter location here"
         android:background="@drawable/edit_text_border"
         android:lines="1"/>
 
@@ -221,6 +225,32 @@
             android:layout_height="wrap_content"
             android:id="@+id/request3"
             android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/request4"
+            android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/request5"
+            android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/request6"
+            android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/request7"
+            android:orientation="horizontal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/request8"
+            android:orientation="horizontal" />
     </LinearLayout>
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>
