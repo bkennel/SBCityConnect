@@ -57,7 +57,6 @@
         <activity android:name=".MonthlySpending1Activity" />
         <activity android:name=".BudgetTrackerActivity" />
         <activity android:name=".CityAssistanceActivity" />
-        <activity android:name=".DropdownActivity"></activity>
     </application>
 
 </manifest>

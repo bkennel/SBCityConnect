@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
@@ -29,10 +31,15 @@ public class BudgetTrackerActivity extends AppCompatActivity implements PopupMen
         menuButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(BudgetTrackerActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(BudgetTrackerActivity.this);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.show();
+                //Add these seven lines inside OnClickListener for menuButton in each activity
+                LayoutInflater inflater=(LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
+                final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                menuWindow.setUser(user);
+
+                menuWindow.setFocusable(true);
+                menuWindow.update();
+                menuWindow.showAsDropDown(menuButton);
             }
         });
 

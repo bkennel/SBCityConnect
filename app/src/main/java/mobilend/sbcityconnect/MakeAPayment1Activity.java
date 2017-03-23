@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,10 +41,15 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PopupMenu popup = new PopupMenu(MakeAPayment1Activity.this, menuButton);
-                popup.setOnMenuItemClickListener(MakeAPayment1Activity.this);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.show();
+                //Add these seven lines inside OnClickListener for menuButton in each activity
+                LayoutInflater inflater=(LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
+                final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                menuWindow.setUser(user);
+
+                menuWindow.setFocusable(true);
+                menuWindow.update();
+                menuWindow.showAsDropDown(menuButton);
             }
         });
         addItemsPaymentTypeSpinner();
