@@ -239,11 +239,54 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
-            android:textColor="@color/colorDarkGreen"
+            android:textColor="@color/colorDarkGray"
             android:layout_below="@id/amount"
             android:layout_alignLeft="@id/amount"
             android:textStyle="bold"
             android:id="@+id/addAmount"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/amount"
+            android:layout_alignLeft="@+id/amount"
+            android:text="Billing Date:"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
+            android:layout_marginTop="45dp"
+            android:id="@+id/date"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/colorDarkGray"
+            android:layout_below="@id/date"
+            android:layout_alignLeft="@id/date"
+            android:textStyle="bold"
+            android:id="@+id/addDate"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/date"
+            android:layout_alignLeft="@id/date"
+            android:text="Account:"
+            android:textColor="@color/colorDarkGreen"
+            android:textStyle="bold"
+            android:layout_marginTop="45dp"
+            android:id="@+id/account"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textColor="@color/colorDarkGray"
+            android:layout_below="@id/account"
+            android:layout_alignLeft="@id/account"
+            android:textStyle="bold"
+            android:id="@+id/addAccount"/>
+
 
         <Button
             android:layout_width="fill_parent"
