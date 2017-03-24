@@ -65,9 +65,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PAYMENT"
+                    android:text="PAY IT FORWARD"
                     android:layout_gravity="center"
-                    android:paddingLeft="60dp"
+                    android:paddingLeft="45dp"
                     android:layout_marginTop="12dp"
                     android:id="@+id/toolbarPaymentTitle"
                     android:textColor="@color/colorDarkGray"

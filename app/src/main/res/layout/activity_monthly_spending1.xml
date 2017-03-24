@@ -71,13 +71,13 @@
             android:max="100"
             android:progress="70"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="-30dp"
+            android:layout_marginLeft="-20dp"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="150dp"
             android:text="You have"
             android:textColor="@color/colorDarkGray"

@@ -16,7 +16,8 @@
         android:id="@+id/menuButton"
         android:src="@drawable/menu_icon"
         android:width="50dp"
-        android:height="140dp" />
+        android:height="140dp"
+        android:layout_marginLeft="20dp"/>
 
     <TextView
         android:text="Thank you"
