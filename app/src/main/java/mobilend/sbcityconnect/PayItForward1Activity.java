@@ -8,10 +8,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -55,28 +58,106 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
         });
         addItemsAddressSpinner();
         addItemsAccountSpinner();
+
+        EditText edit =  (EditText) findViewById(R.id.editText);
+
+        edit.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        final EditText edit =  (EditText) findViewById(R.id.editText);
+                        String inputAmount = edit.getText().toString();
+                        TextView tv2 = (TextView) findViewById(R.id.addAmount);
+                        tv2.setText(inputAmount);
+
+                    }
+                });
     }
     public void addItemsAddressSpinner(){
         addressSpinner = (Spinner) findViewById(R.id.BillingAddressSpinner);
         List<String> list = new ArrayList<String>();
-        list.add("Billing Address");
-        list.add("Address 1");
-        list.add("Address 2");
+        if(user.equals("Robert")) {
+            list.add("Billing Address");
+            list.add("Home: Churchill Dr");
+        }
+        else {
+            list.add("Billing Address");
+            list.add("Address 1");
+        }
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         addressSpinner.setAdapter(dataAdapter);
+
+        addressSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Home: Churchill Dr"))
+                {
+                    TextView tv1 = (TextView) findViewById(R.id.billingAddress);
+                    tv1.setText("1625 Churchill Drive\nSB, IN 46617");
+                }
+                else {
+                    TextView tv2 = (TextView) findViewById(R.id.billingAddress);
+                    tv2.setText("");
+                }
+
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                TextView tv3 = (TextView) findViewById(R.id.billingAddress);
+                tv3.setText("");
+            }
+        });
     }
     public void addItemsAccountSpinner(){
         accountSpinner = (Spinner) findViewById(R.id.PaymentAccountSpinner);
         List<String> list = new ArrayList<String>();
-        list.add("Payment Account");
-        list.add("Account 1");
-        list.add("Account 2");
+        if(user.equals("Robert")){
+            list.add("Payment Account");
+            list.add("Visa ending in 6789");
+            list.add("Bank Account ending in 5432");
+        }
+        else {
+            list.add("Payment Account");
+            list.add("Account 1");
+            list.add("Account 2");
+        }
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         accountSpinner.setAdapter(dataAdapter);
+
+        accountSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Visa ending in 6789"))
+                {
+                    TextView tv1 = (TextView) findViewById(R.id.addAccount);
+                    tv1.setText("Visa ending in 6789");
+                }
+                else if (selectedItem.equals("Bank Account ending in 5432")){
+                    TextView tv3 = (TextView) findViewById(R.id.addAccount);
+                    tv3.setText("Bank Account ending in 5432");
+                }
+                else {
+                    TextView tv2 = (TextView) findViewById(R.id.addAccount);
+                    tv2.setText("");
+                }
+
+            } // to close the onItemSelected
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                TextView tv3 = (TextView) findViewById(R.id.billingAddress);
+                tv3.setText("");
+            }
+        });
     }
 /*    @Override
     public boolean onCreateOptionsMenu(Menu menu){

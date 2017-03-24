@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,7 +42,6 @@
             android:name=".CalendarActivity"
             android:label="CALENDAR"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".EPaymentActivity"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".PayItForward1Activity"

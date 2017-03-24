@@ -110,7 +110,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:id="@+id/buttonYes"
-        android:background="#ffffff"/>
+        android:background="#ffffff"
+        android:onClick="goToSummary"/>
 
     <Button
         android:text="NO - SUBMIT PAYMENT"

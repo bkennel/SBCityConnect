@@ -97,7 +97,6 @@ public class PaymentAlertActivity extends AppCompatActivity implements PopupMenu
 
     public void goToSummary(View view) {
         Intent intent = new Intent(this, AlertSummaryActivity.class);
-        startActivity(intent);
         intent.putExtra("USERNAME", user);
         startActivity(intent);
 

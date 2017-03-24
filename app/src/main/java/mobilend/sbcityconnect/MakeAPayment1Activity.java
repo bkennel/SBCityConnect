@@ -27,11 +27,12 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
     ImageButton menuButton;
     private Spinner paymentTypeSpinner, addressSpinner, accountSpinner;
     String user = "";
-    Boolean Credit = true;
+    Boolean warning = false;
     Boolean Bank = true;
     private int month;
     private int year;
     private int day;
+    private String inputAmount = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,30 +65,6 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         addItemsAddressSpinner();
         addItemsAccountSpinner();
 
-        /*
-        Spinner spinner = (Spinner)findViewById(R.id.PaymentTypeSpinner);
-        String paymentType = spinner.getSelectedItem().toString();
-
-        Spinner spinner2 = (Spinner)findViewById(R.id.BillingAddressSpinner);
-        String billingAddress = spinner.getSelectedItem().toString();
-
-        Spinner spinner3 = (Spinner)findViewById(R.id.PaymentAccountSpinner);
-        String paymentAccount = spinner.getSelectedItem().toString();
-
-        TextView tv1 = (TextView) findViewById(R.id.billingAddress);
-        tv1.setText(paymentType);
-
-        final EditText edit =  (EditText) findViewById(R.id.editText);
-        edit.getText().toString();
-
-        TextView tv2 = (TextView) findViewById(R.id.addAmount);
-        tv1.setText("$" + edit);
-
-        if (billingAddress.equals("Home: Diamond Ave")) {
-            //TextView tv1 = (TextView) findViewById(R.id.billingAddress);
-            //tv1.setText("735 Diamond Ave\nSB, IN 46628");
-
-        }*/
         EditText edit =  (EditText) findViewById(R.id.editText);
 
         edit.setOnClickListener(
@@ -96,9 +73,10 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                     public void onClick(View view)
                     {
                         final EditText edit =  (EditText) findViewById(R.id.editText);
-                        String text = edit.getText().toString();
+                        inputAmount = edit.getText().toString();
                         TextView tv2 = (TextView) findViewById(R.id.addAmount);
-                        tv2.setText(text);
+                        tv2.setText(inputAmount);
+
                     }
                 });
 
@@ -129,6 +107,7 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                 else{
                     EditText myTextBox = (EditText) findViewById(R.id.editText);
                     myTextBox.setText("$");
+
                 }
 
             } // to close the onItemSelected
@@ -280,7 +259,15 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         return false;
     }
     public void goToThankYou(View view){
-        Intent intent = new Intent(this, MakeAPaymentLastActivity.class);
-        startActivity(intent);
+        if(inputAmount.equals("$80.00")){
+            Intent intent = new Intent(this, PaymentAlertActivity.class);
+            intent.putExtra("USERNAME", user);
+            startActivity(intent);
+        }
+        else {
+            Intent intent = new Intent(this, MakeAPaymentLastActivity.class);
+            intent.putExtra("USERNAME", user);
+               startActivity(intent);
+        }
     }
 }

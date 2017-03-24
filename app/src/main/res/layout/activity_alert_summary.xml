@@ -63,14 +63,14 @@
         android:layout_gravity="center"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:textColor="@color/colorMaroon"
+        android:textColor="@color/colorDarkGreen"
         android:id="@+id/textSummary"
         />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="350dp"
-        android:background="@drawable/alert_summary_box"
+        android:background="@drawable/summary_box"
         android:layout_below="@+id/textSummary"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
@@ -81,7 +81,7 @@
 
     <TextView
         android:text="CONTACT"
-        android:textColor="@color/colorMaroon"
+        android:textColor="@color/colorDarkGreen"
         android:textSize="15dp"
         android:textStyle="bold"
         android:layout_marginLeft="30dp"
@@ -103,4 +103,94 @@
         android:textSize="15dp"
         android:id="@+id/contactAddress"
         android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Billing Address:"
+        android:textColor="@color/colorDarkGreen"
+        android:layout_below="@id/textSummary"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:id="@+id/address"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="735 Diamond Ave\nSB, IN 46628"
+        android:lines="2"
+        android:minLines="2"
+        android:textColor="@color/colorDarkGray"
+        android:layout_below="@id/address"
+        android:layout_alignLeft="@+id/address"
+        android:textStyle="bold"
+        android:id="@+id/billingAddress"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Amount:"
+        android:textColor="@color/colorDarkGreen"
+        android:layout_below="@id/address"
+        android:layout_alignLeft="@id/address"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:id="@+id/amount"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="$80.00"
+        android:textColor="@color/colorDarkGray"
+        android:layout_below="@id/amount"
+        android:layout_alignLeft="@id/amount"
+        android:textStyle="bold"
+        android:id="@+id/addAmount"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/amount"
+        android:layout_alignLeft="@+id/amount"
+        android:text="Billing Date:"
+        android:textColor="@color/colorDarkGreen"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        android:id="@+id/date"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="March 29, 2017"
+        android:textColor="@color/colorDarkGray"
+        android:layout_below="@id/date"
+        android:layout_alignLeft="@id/date"
+        android:textStyle="bold"
+        android:id="@+id/addDate"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/date"
+        android:layout_alignLeft="@id/date"
+        android:text="Account:"
+        android:textColor="@color/colorDarkGreen"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        android:id="@+id/account"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Visa ending in 6789"
+        android:textColor="@color/colorDarkGray"
+        android:layout_below="@id/account"
+        android:layout_alignLeft="@id/account"
+        android:textStyle="bold"
+        android:id="@+id/addAccount"/>
+
 </RelativeLayout>
