@@ -1,5 +1,6 @@
 package mobilend.sbcityconnect;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MonthlySpending1Activity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -24,7 +27,7 @@ public class MonthlySpending1Activity extends AppCompatActivity implements Popup
             setContentView(R.layout.activity_monthly_spending1);
         }
         else {
-            setContentView(R.layout.activity_alert_summary);
+            setContentView(R.layout.activity_monthly_spending1);
         }
 
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
@@ -47,6 +50,12 @@ public class MonthlySpending1Activity extends AppCompatActivity implements Popup
             }
         });
 
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 70);
+        animation.setDuration(3500); // 3.5 second
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
     }
 
 /*    @Override

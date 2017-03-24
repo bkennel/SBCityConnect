@@ -88,16 +88,17 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
             //tv1.setText("735 Diamond Ave\nSB, IN 46628");
 
         }*/
-        final EditText edit =  (EditText) findViewById(R.id.editText);
+        EditText edit =  (EditText) findViewById(R.id.editText);
 
         edit.setOnClickListener(
                 new View.OnClickListener()
                 {
                     public void onClick(View view)
                     {
+                        final EditText edit =  (EditText) findViewById(R.id.editText);
                         String text = edit.getText().toString();
                         TextView tv2 = (TextView) findViewById(R.id.addAmount);
-                        tv2.setText("$" + text);
+                        tv2.setText(text);
                     }
                 });
 
@@ -118,14 +119,16 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
                 String selectedItem = parent.getItemAtPosition(position).toString();
-                if(selectedItem.equals("Credit Card"))
+                if(selectedItem.equals("City Utilities"))
                 {
-                    Credit = true;
-                    Bank = false;
+                    EditText myTextBox = (EditText) findViewById(R.id.editText);
+                    myTextBox.setText("$75.00");
+                    TextView amount = (TextView) findViewById(R.id.addAmount);
+                    amount.setText("$75.00");
                 }
-                else if (selectedItem.equals("Bank Account")) {
-                    Bank = true;
-                    Credit = false;
+                else{
+                    EditText myTextBox = (EditText) findViewById(R.id.editText);
+                    myTextBox.setText("$");
                 }
 
             } // to close the onItemSelected
