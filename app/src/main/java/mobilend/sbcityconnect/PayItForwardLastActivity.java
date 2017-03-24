@@ -22,10 +22,6 @@ public class PayItForwardLastActivity extends AppCompatActivity implements Popup
 
         user = getIntent().getStringExtra("USERNAME");
 
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
-
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +90,7 @@ public class PayItForwardLastActivity extends AppCompatActivity implements Popup
     }
 
     public void goBack(View view){
-        Intent intent = new Intent(this, PayItForward1Activity.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, EPaymentActivity.class);
         intent.putExtra("USERNAME", user);
         startActivity(intent);
     }

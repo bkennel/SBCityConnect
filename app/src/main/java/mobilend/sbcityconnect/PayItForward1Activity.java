@@ -28,15 +28,15 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
 
         NumberPicker np = (NumberPicker) findViewById(R.id.np);
 
+        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
+
         np.setMinValue(0);
         np.setMaxValue(2);
         np.setDisplayedValues( new String[] { "Neighbor", "Future Self", "Community" } );
 
         user = getIntent().getStringExtra("USERNAME");
-
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
 
         menuButton=(ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +138,6 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
 
     public void goToThankYou(View view){
         Intent intent = new Intent(this, PayItForwardLastActivity.class);
-        startActivity(intent);
         intent.putExtra("USERNAME", user);
         startActivity(intent);
     }

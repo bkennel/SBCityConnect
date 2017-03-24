@@ -107,8 +107,7 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         paymentTypeSpinner = (Spinner) findViewById(R.id.PaymentTypeSpinner);
         List<String> list = new ArrayList<String>();
         list.add("Payment Type");
-        list.add("Credit Card");
-        list.add("Bank Account");
+        list.add("City Utilities");
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

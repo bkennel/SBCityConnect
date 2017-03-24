@@ -136,7 +136,6 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void goToCalendar(View view){
         Intent intent = new Intent(this, CalendarHomeActivity.class);
-        startActivity(intent);
 
         //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
         intent.putExtra("USERNAME", user);
@@ -145,7 +144,6 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void goToPayment(View view){
         Intent intent = new Intent(this, MakeAPayment1Activity.class);
-        startActivity(intent);
 
         //Intent intent = new Intent(getBaseContext(), HomeActivity.class);
         intent.putExtra("USERNAME", user);
