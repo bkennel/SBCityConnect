@@ -41,7 +41,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_assistance);
-        context=getApplicationContext();
+        context=this;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -112,7 +112,8 @@
         android:id="@+id/issueSpinner"
         android:background="@drawable/payment_spinner"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"/>
+        android:layout_marginRight="30dp"
+        />
     <ImageView
         android:layout_below="@id/issueTitle"
         android:id="@+id/downarrow2"

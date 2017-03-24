@@ -23,18 +23,12 @@ public class MonthlySpending1Activity extends AppCompatActivity implements Popup
         super.onCreate(savedInstanceState);
         user = getIntent().getStringExtra("USERNAME");
 
-        if (user.equals("Joseph")) {
-            setContentView(R.layout.activity_monthly_spending1);
-        }
-        else {
-            setContentView(R.layout.activity_monthly_spending1);
-        }
-
-        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_monthly_spending1);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
 
-        menuButton=(ImageButton) findViewById(R.id.menuButton);
+        menuButton = (ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
