@@ -59,7 +59,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
         addItemsRequestSpinner();
