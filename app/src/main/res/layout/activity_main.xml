@@ -137,7 +137,6 @@
         android:background="@color/colorDarkBlue"
         android:textAlignment="textStart"
         android:textSize="30sp"
-        android:onClick="goToLife"
         android:layout_marginTop="4dp"
         android:layout_below="@+id/cityconectText"
         android:layout_alignParentLeft="true"

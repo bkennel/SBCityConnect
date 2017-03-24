@@ -19,14 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-    public void goToLife(View view){
-        //Click to bypass login - change later
-        //Intent intent = new Intent(this, LifeActivity.class);
-        Intent intent=new Intent(this,HomeActivity.class);
-        startActivity(intent);
-    }
-
     public void goToLogin(View view){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
