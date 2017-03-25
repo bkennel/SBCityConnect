@@ -6,428 +6,425 @@
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="mobilend.sbcityconnect.MonthlySpending1Activity">
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorLightGray"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorLightGray"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            >
+            android:dividerPadding="8dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/menuButton"
                 android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                android:orientation="horizontal"
-                android:dividerPadding="8dp"
-                >
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorLightGray"
-                    android:id="@+id/menuButton"
-                    android:src="@drawable/menu_icon"
-                    android:width="50dp"
-                    android:height="140dp"
-                    />
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:text="SPENDING THIS MONTH"
-                    android:textAlignment="center"
-                    android:lines="2"
-                    android:layout_gravity="center"
-                    android:paddingLeft="30dp"
-                    android:id="@+id/toolbarPaymentTitle"
-                    android:textColor="@color/colorDarkGray"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    />
+                android:layout_height="match_parent"
+                android:width="50dp"
+                android:height="140dp"
+                android:background="@color/colorLightGray"
+                android:src="@drawable/menu_icon" />
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/toolbarPaymentTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:lines="2"
+                android:paddingLeft="30dp"
+                android:text="SPENDING THIS MONTH"
+                android:textAlignment="center"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
-        </android.support.v7.widget.Toolbar>
+        </LinearLayout>
 
-        <ScrollView
-            android:layout_below="@+id/toolbar"
-            android:id="@+id/ScrollView01"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="-10dp"
-            android:indeterminate="false"
-            android:progressDrawable="@drawable/progress_circle"
-            android:background="@drawable/circle_shape"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:max="100"
-            android:progress="70"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="-20dp"
-            />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="150dp"
-            android:text="You have"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/youHaveText"/>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/circle_shape"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="70"
+                android:progressDrawable="@drawable/progress_circle" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/youHaveText"
-            android:layout_marginTop="2dp"
-            android:layout_alignLeft="@+id/youHaveText"
-            android:text="$200.67"
-            android:textStyle="bold"
-            android:textColor="@color/colorDarkGreen"
-            android:textSize="15dp"
-            android:id="@+id/amountText"/>
+            <TextView
+                android:id="@+id/youHaveText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="100dp"
+                android:text="You have"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/youHaveText"
-            android:layout_marginTop="2dp"
-            android:layout_alignLeft="@+id/amountText"
-            android:layout_marginLeft="60dp"
-            android:text="left"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/leftText"/>
+            <TextView
+                android:id="@+id/amountText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/youHaveText"
+                android:layout_below="@+id/youHaveText"
+                android:layout_marginTop="2dp"
+                android:text="$200.67"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/amountText"
-            android:layout_marginTop="2dp"
-            android:layout_alignLeft="@+id/amountText"
-            android:text="this month"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/thisMonthText"/>
+            <TextView
+                android:id="@+id/leftText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/amountText"
+                android:layout_below="@+id/youHaveText"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="2dp"
+                android:text="left"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="20dp"
-            android:background="@drawable/gray_box_header"
-            android:text="TODAY"
-            android:textSize="18dp"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:layout_below="@id/progressBar"
-            android:id="@+id/todayHeader"
-            android:textStyle="bold"
-            android:layout_marginTop="-20dp"/>
+            <TextView
+                android:id="@+id/thisMonthText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/amountText"
+                android:layout_below="@+id/amountText"
+                android:layout_marginTop="2dp"
+                android:text="this month"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/food"
-            android:layout_below="@id/todayHeader"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/foodIcon"/>
+            <TextView
+                android:id="@+id/todayHeader"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/progressBar"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/gray_box_header"
+                android:text="TODAY"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/todayHeader"
-            android:layout_marginTop="18dp"
-            android:text="MARTIN'S GROCERY"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:layout_alignStart="@+id/foodIcon"
-            android:layout_marginLeft="30dp"
-            />
+            <ImageView
+                android:id="@+id/foodIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/todayHeader"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/food" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="250dp"
-            android:layout_below="@id/todayHeader"
-            android:layout_marginTop="18dp"
-            android:text="-$85.00"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignStart="@+id/foodIcon"
+                android:layout_below="@id/todayHeader"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="18dp"
+                android:text="MARTIN'S GROCERY"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="20dp"
-            android:background="@drawable/gray_box_header"
-            android:text="MAR 28, 2017"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:layout_below="@id/todayHeader"
-            android:layout_marginTop="45dp"
-            android:id="@+id/Header2"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/todayHeader"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="18dp"
+                android:text="-$85.00"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/house"
-            android:layout_below="@id/Header2"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/houseIcon"/>
+            <TextView
+                android:id="@+id/Header2"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/todayHeader"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/gray_box_header"
+                android:text="MAR 28, 2017"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/Header2"
-            android:layout_marginTop="18dp"
-            android:text="RENT"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:layout_marginLeft="60dp"
-            android:id="@+id/rentText"/>
+            <ImageView
+                android:id="@+id/houseIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/Header2"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/house" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="250dp"
-            android:layout_below="@id/Header2"
-            android:layout_marginTop="18dp"
-            android:text="-$850.00"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/amountRent"/>
+            <TextView
+                android:id="@+id/rentText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/Header2"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="18dp"
+                android:text="RENT"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/lightbulb"
-            android:layout_below="@id/houseIcon"
-            android:layout_alignLeft="@id/houseIcon"
-            android:layout_marginTop="15dp"
-            android:id="@+id/utilitiesIcon"/>
+            <TextView
+                android:id="@+id/amountRent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/Header2"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="18dp"
+                android:text="-$850.00"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/houseIcon"
-            android:layout_alignLeft="@id/rentText"
-            android:layout_marginTop="18dp"
-            android:text="UTILITIES"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/utilitiesText"/>
+            <ImageView
+                android:id="@+id/utilitiesIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/houseIcon"
+                android:layout_below="@id/houseIcon"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/lightbulb" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/houseIcon"
-            android:layout_alignLeft="@id/amountRent"
-            android:layout_marginTop="18dp"
-            android:text="-$64.00"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/utilitiesAmount"/>
+            <TextView
+                android:id="@+id/utilitiesText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignLeft="@id/rentText"
+                android:layout_below="@id/houseIcon"
+                android:layout_marginTop="18dp"
+                android:text="UTILITIES"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/dollar_sign"
-            android:layout_below="@id/utilitiesIcon"
-            android:layout_alignLeft="@id/utilitiesIcon"
-            android:layout_marginTop="15dp"
-            android:id="@+id/incomeIcon"/>
+            <TextView
+                android:id="@+id/utilitiesAmount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/amountRent"
+                android:layout_below="@id/houseIcon"
+                android:layout_marginTop="18dp"
+                android:text="-$64.00"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/utilitiesIcon"
-            android:layout_alignLeft="@id/rentText"
-            android:layout_marginTop="18dp"
-            android:text="INCOME"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/incomeText"/>
+            <ImageView
+                android:id="@+id/incomeIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/utilitiesIcon"
+                android:layout_below="@id/utilitiesIcon"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dollar_sign" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/utilitiesIcon"
-            android:layout_alignLeft="@id/amountRent"
-            android:layout_marginTop="18dp"
-            android:text="+$1000.00"
-            android:textColor="@color/colorDarkGreen"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/incomeAmounts"
-            />
+            <TextView
+                android:id="@+id/incomeText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignLeft="@id/rentText"
+                android:layout_below="@id/utilitiesIcon"
+                android:layout_marginTop="18dp"
+                android:text="INCOME"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="20dp"
-            android:background="@drawable/gray_box_header"
-            android:text="MAR 24, 2017"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:layout_below="@id/Header2"
-            android:layout_marginTop="120dp"
-            android:id="@+id/Header3"/>
+            <TextView
+                android:id="@+id/incomeAmounts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/amountRent"
+                android:layout_below="@id/utilitiesIcon"
+                android:layout_marginTop="18dp"
+                android:text="+$1000.00"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/food"
-            android:layout_below="@id/Header3"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/foodIcon2"/>
+            <TextView
+                android:id="@+id/Header3"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/Header2"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/gray_box_header"
+                android:text="MAR 24, 2017"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/Header3"
-            android:layout_marginTop="18dp"
-            android:text="CAFE"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:layout_marginLeft="60dp"
-            android:id="@+id/cafeText"/>
+            <ImageView
+                android:id="@+id/foodIcon2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/Header3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/food" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="250dp"
-            android:layout_below="@id/Header3"
-            android:layout_marginTop="18dp"
-            android:text="-$4.55"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/amountCafe"/>
+            <TextView
+                android:id="@+id/cafeText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/Header3"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="18dp"
+                android:text="CAFE"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/food"
-            android:layout_below="@id/foodIcon2"
-            android:layout_alignLeft="@id/houseIcon"
-            android:layout_marginTop="15dp"
-            android:id="@+id/foodIcon3"/>
+            <TextView
+                android:id="@+id/amountCafe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/Header3"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="18dp"
+                android:text="-$4.55"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/foodIcon2"
-            android:layout_alignLeft="@id/rentText"
-            android:layout_marginTop="18dp"
-            android:text="ALDI"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/aldiText"/>
+            <ImageView
+                android:id="@+id/foodIcon3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/houseIcon"
+                android:layout_below="@id/foodIcon2"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/food" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/foodIcon2"
-            android:layout_alignLeft="@id/amountRent"
-            android:layout_marginTop="18dp"
-            android:text="-$50.77"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/aldiAmount"/>
+            <TextView
+                android:id="@+id/aldiText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignLeft="@id/rentText"
+                android:layout_below="@id/foodIcon2"
+                android:layout_marginTop="18dp"
+                android:text="ALDI"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="20dp"
-            android:background="@drawable/gray_box_header"
-            android:text="MAR 20, 2017"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:layout_below="@id/Header3"
-            android:layout_marginTop="85dp"
-            android:id="@+id/Header4"/>
+            <TextView
+                android:id="@+id/aldiAmount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/amountRent"
+                android:layout_below="@id/foodIcon2"
+                android:layout_marginTop="18dp"
+                android:text="-$50.77"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/food"
-            android:layout_below="@id/Header4"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/foodIcon4"/>
+            <TextView
+                android:id="@+id/Header4"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/Header3"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/gray_box_header"
+                android:text="MAR 20, 2017"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/Header4"
-            android:layout_marginTop="18dp"
-            android:text="CAFE"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:layout_marginLeft="60dp"
-            android:id="@+id/cafe2Text"/>
+            <ImageView
+                android:id="@+id/foodIcon4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/Header4"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/food" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="250dp"
-            android:layout_below="@id/Header4"
-            android:layout_marginTop="18dp"
-            android:text="-$2.50"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/amount2Cafe"/>
+            <TextView
+                android:id="@+id/cafe2Text"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/Header4"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="18dp"
+                android:text="CAFE"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/food"
-            android:layout_below="@id/foodIcon4"
-            android:layout_alignLeft="@id/houseIcon"
-            android:layout_marginTop="15dp"
-            android:id="@+id/foodIcon5"/>
+            <TextView
+                android:id="@+id/amount2Cafe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/Header4"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="18dp"
+                android:text="-$2.50"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/foodIcon4"
-            android:layout_alignLeft="@id/rentText"
-            android:layout_marginTop="18dp"
-            android:text="MARTIN'S GROCERY"
-            android:textColor="@color/colorDarkGray"
-            android:textSize="15dp"
-            android:id="@+id/martinsText"/>
+            <ImageView
+                android:id="@+id/foodIcon5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignLeft="@id/houseIcon"
+                android:layout_below="@id/foodIcon4"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/food" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/foodIcon4"
-            android:layout_alignLeft="@id/amountRent"
-            android:layout_marginTop="18dp"
-            android:text="-$35.45"
-            android:textColor="@color/colorMaroon"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:id="@+id/martinsAmount"/>
+            <TextView
+                android:id="@+id/martinsText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignLeft="@id/rentText"
+                android:layout_below="@id/foodIcon4"
+                android:layout_marginTop="18dp"
+                android:text="MARTIN'S GROCERY"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="15dp" />
 
-    </RelativeLayout>
-</ScrollView>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/martinsAmount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/amountRent"
+                android:layout_below="@id/foodIcon4"
+                android:layout_marginTop="18dp"
+                android:text="-$35.45"
+                android:textColor="@color/colorMaroon"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -384,13 +384,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void goToHome(){
 
         Intent intent = new Intent(getBaseContext(), HomeActivity.class);
-        if (passEmail.equals("JParker@gmail.com")){
+        if (passEmail.equals("jparker@gmail.com")){
             user = "Joseph";
         }
-        if (passEmail.equals("JFischer@gmail.com")){
+        if (passEmail.equals("jfischer@gmail.com")){
             user = "Janice";
         }
-        if (passEmail.equals("RHarris@gmail.com")){
+        if (passEmail.equals("rharris@gmail.com")){
             user = "Robert";
         }
         intent.putExtra("USERNAME", user);

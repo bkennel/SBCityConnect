@@ -40,19 +40,6 @@
         android:textSize="45sp"
         android:textStyle="bold"/>
 
-    <!--<Button
-        android:text="Calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendarButton"
-        android:background="@color/colorMenu"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        android:onClick="goToCalendar"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />-->
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

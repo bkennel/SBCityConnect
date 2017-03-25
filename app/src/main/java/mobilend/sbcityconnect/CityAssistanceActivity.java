@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -41,6 +42,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_assistance);
+        user = getIntent().getStringExtra("USERNAME");
         context=this;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
