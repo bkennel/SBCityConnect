@@ -2,6 +2,9 @@ package mobilend.sbcityconnect;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,7 +53,9 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 menuWindow.setUser(user);
 
+                menuWindow.setOutsideTouchable(true);
                 menuWindow.setFocusable(true);
+                menuWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 menuWindow.update();
                 menuWindow.showAsDropDown(menuButton,-50,0);
             }
