@@ -37,7 +37,7 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
 
         np.setMinValue(0);
         np.setMaxValue(2);
-        np.setDisplayedValues( new String[] { "Neighbor", "Future Self", "Community" } );
+        np.setDisplayedValues( new String[] { "NEIGHBOR", "FUTURE SELF", "COMMUNITY" } );
 
         user = getIntent().getStringExtra("USERNAME");
 
@@ -69,7 +69,7 @@ public class PayItForward1Activity extends AppCompatActivity implements android.
                         final EditText edit =  (EditText) findViewById(R.id.editText);
                         String inputAmount = edit.getText().toString();
                         TextView tv2 = (TextView) findViewById(R.id.addAmount);
-                        tv2.setText(inputAmount);
+                        tv2.setText('$' + inputAmount);
 
                     }
                 });
