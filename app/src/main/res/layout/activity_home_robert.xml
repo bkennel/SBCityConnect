@@ -55,26 +55,27 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="You saved $365 this year"
         android:id="@+id/submessage"
         android:textColor="@android:color/darker_gray"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:background="@android:color/background_light"
         android:layout_below="@+id/mainmessage"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="13dp"
-        android:gravity="center" />
+        android:gravity="center"
+        />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:color="@android:color/white"
         android:text="CONGRATULATIONS"
         android:id="@+id/mainmessage"
         android:textColor="@color/colorBusiness"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:background="@android:color/background_light"
         android:layout_below="@+id/nameTitle"
         android:layout_alignParentLeft="true"
@@ -89,8 +90,7 @@
         android:textSize="30sp"
         android:textColor="@color/colorBusiness"
         android:layout_below="@+id/welcomeTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
         android:layout_marginBottom="11dp" />
 
     <TextView
@@ -102,8 +102,8 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:layout_below="@+id/weatherImage"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginLeft="10dp"
+        />
 
     <TextView
         android:text="MAR"
@@ -139,7 +139,7 @@
         android:gravity="center"
         android:layout_below="@id/submessage"
         android:id="@+id/title2"
-        android:textSize="24dp"
+        android:textSize="22dp"
         android:layout_toRightOf="@+id/month2"
         android:layout_toEndOf="@+id/month2"
         android:background="@android:color/white"/>
@@ -204,7 +204,7 @@
         android:gravity="center"
         android:layout_below="@id/date2"
         android:id="@+id/title3"
-        android:textSize="24dp"
+        android:textSize="22dp"
         android:layout_marginTop="3dp"
         android:background="@android:color/white"/>
 

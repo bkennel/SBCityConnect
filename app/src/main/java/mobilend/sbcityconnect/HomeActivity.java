@@ -65,8 +65,8 @@ public class HomeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             TextView tv2 = (TextView)findViewById(R.id.submessage);
             tv2.setText("You Saved $365 this year");
 
-            ImageView w1 = (ImageView)findViewById(R.id.weatherImage);
-            w1.setImageResource(R.mipmap.thunderstorm);
+            //ImageView w1 = (ImageView)findViewById(R.id.weatherImage);
+            //w1.setImageResource(R.mipmap.thunderstorm);
         }
         else if(user.equals("Robert")){
             TextView tv3 = (TextView)findViewById(R.id.submessage);

@@ -121,7 +121,8 @@
             <TextView
                 android:id="@+id/todayHeader"
                 android:layout_width="fill_parent"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
+                android:gravity="center"
                 android:layout_below="@id/progressBar"
                 android:layout_marginTop="-20dp"
                 android:background="@drawable/gray_box_header"
@@ -165,7 +166,8 @@
             <TextView
                 android:id="@+id/Header2"
                 android:layout_width="fill_parent"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
+                android:gravity="center"
                 android:layout_below="@id/todayHeader"
                 android:layout_marginTop="45dp"
                 android:background="@drawable/gray_box_header"
@@ -274,7 +276,8 @@
             <TextView
                 android:id="@+id/Header3"
                 android:layout_width="fill_parent"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
+                android:gravity="center"
                 android:layout_below="@id/Header2"
                 android:layout_marginTop="120dp"
                 android:background="@drawable/gray_box_header"
@@ -351,7 +354,8 @@
             <TextView
                 android:id="@+id/Header4"
                 android:layout_width="fill_parent"
-                android:layout_height="20dp"
+                android:layout_height="25dp"
+                android:gravity="center"
                 android:layout_below="@id/Header3"
                 android:layout_marginTop="85dp"
                 android:background="@drawable/gray_box_header"
