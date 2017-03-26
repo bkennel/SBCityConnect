@@ -41,11 +41,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="0dp"
-                android:paddingLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:text="CITY ASSISTANCE"
                 android:textAlignment="center"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

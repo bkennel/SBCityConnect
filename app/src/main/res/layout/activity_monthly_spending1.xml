@@ -35,15 +35,15 @@
 
             <TextView
                 android:id="@+id/toolbarPaymentTitle"
-                android:layout_width="200dp"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:lines="2"
-                android:paddingLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:text="SPENDING THIS MONTH"
                 android:textAlignment="center"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textStyle="bold" />
 
         </LinearLayout>
