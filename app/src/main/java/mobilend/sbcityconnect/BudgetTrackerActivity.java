@@ -58,13 +58,13 @@ public class BudgetTrackerActivity extends AppCompatActivity implements PopupMen
         if(pressed.equals("false")) {
             ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress1);
 
-            ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 55);
+            ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 88);
             animation.setDuration(3500); // 3.5 second
             animation.setInterpolator(new DecelerateInterpolator());
 
             ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
 
-            ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 66);
+            ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 40);
             animation2.setDuration(3500); // 3.5 second
             animation2.setInterpolator(new DecelerateInterpolator());
 
@@ -82,13 +82,13 @@ public class BudgetTrackerActivity extends AppCompatActivity implements PopupMen
 
             ProgressBar progressBar5 = (ProgressBar) findViewById(R.id.progress5);
 
-            ObjectAnimator animation5 = ObjectAnimator.ofInt(progressBar5, "progress", 0, 20);
+            ObjectAnimator animation5 = ObjectAnimator.ofInt(progressBar5, "progress", 0, 80);
             animation5.setDuration(3500); // 3.5 second
             animation5.setInterpolator(new DecelerateInterpolator());
 
             ProgressBar progressBar6 = (ProgressBar) findViewById(R.id.progressBar);
 
-            ObjectAnimator animation6 = ObjectAnimator.ofInt(progressBar6, "progress", 0, 70);
+            ObjectAnimator animation6 = ObjectAnimator.ofInt(progressBar6, "progress", 0, 75);
             animation6.setDuration(3500); // 3.5 second
             animation6.setInterpolator(new DecelerateInterpolator());
 

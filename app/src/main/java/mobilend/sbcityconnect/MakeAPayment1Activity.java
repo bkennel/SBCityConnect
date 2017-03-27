@@ -103,13 +103,13 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
                 if(selectedItem.equals("City Utilities"))
                 {
                     EditText myTextBox = (EditText) findViewById(R.id.editText);
-                    myTextBox.setText("$75.00");
+                    myTextBox.setText("75.00");
                     TextView amount = (TextView) findViewById(R.id.addAmount);
                     amount.setText("$75.00");
                 }
                 else{
                     EditText myTextBox = (EditText) findViewById(R.id.editText);
-                    myTextBox.setText("$");
+                    myTextBox.setText("");
 
                 }
 
@@ -255,7 +255,7 @@ public class MakeAPayment1Activity extends AppCompatActivity implements PopupMen
         return false;
     }
     public void goToThankYou(View view){
-        if(inputAmount.equals("$80.00")){
+        if(inputAmount.equals("80.00")){
             Intent intent = new Intent(this, PaymentAlertActivity.class);
             intent.putExtra("USERNAME", user);
             startActivity(intent);

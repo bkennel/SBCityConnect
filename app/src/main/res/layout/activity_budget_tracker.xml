@@ -154,8 +154,8 @@
         />
 
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="+"
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
@@ -230,13 +230,13 @@
         />
 
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="+"
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/plus1"
         android:background="@android:color/transparent"
         android:id="@+id/plus2"
@@ -302,13 +302,13 @@
         />
 
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="+"
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus2"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/plus2"
         android:background="@android:color/transparent"
         android:id="@+id/plus3"
@@ -374,13 +374,13 @@
         />
 
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="+"
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus3"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_below="@id/plus3"
         android:background="@android:color/transparent"
         android:id="@+id/plus4"
@@ -481,13 +481,13 @@
         android:id="@+id/leisureBudget"
         />
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="+"
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus4"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/plus4"
         android:background="@android:color/transparent"
         android:id="@+id/plus5"

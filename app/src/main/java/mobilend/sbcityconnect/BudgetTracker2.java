@@ -56,13 +56,13 @@ public class BudgetTracker2 extends AppCompatActivity implements PopupMenu.OnMen
 
         ProgressBar progressBar = (ProgressBar) findViewById(R.id.newProgress1);
 
-        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 90);
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 86);
         animation.setDuration(3500); // 3.5 second
         animation.setInterpolator(new DecelerateInterpolator());
 
         ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.newProgress2);
 
-        ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 33);
+        ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 66);
         animation2.setDuration(3500); // 3.5 second
         animation2.setInterpolator(new DecelerateInterpolator());
 

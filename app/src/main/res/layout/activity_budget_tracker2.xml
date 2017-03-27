@@ -163,14 +163,14 @@
         />
 
     <Button
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:text="-"
-        android:textSize="14dp"
+        android:textSize="18dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/progress1"
         android:layout_marginLeft="-30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@id/greenIcon"
         android:background="@android:color/transparent"
         android:id="@+id/plus1"
@@ -367,7 +367,7 @@
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus1"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="97dp"
         android:layout_below="@id/plus1"
         android:background="@android:color/transparent"
         android:id="@+id/plus2"
