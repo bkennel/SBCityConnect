@@ -60,7 +60,6 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
                 final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
                 final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 menuWindow.setUser(user);
-                menuWindow.setBackgroundColor(color);
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
