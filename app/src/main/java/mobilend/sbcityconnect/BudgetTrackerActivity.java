@@ -22,15 +22,16 @@ import static mobilend.sbcityconnect.R.id.progressBar;
 public class BudgetTrackerActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     ImageButton menuButton;
     String user = "";
-
+    String pressed = "false";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget_tracker);
 
-        user = getIntent().getStringExtra("USERNAME");
-
+        Intent intent = getIntent();
+        user= intent.getStringExtra("USERNAME");
+        pressed = intent.getStringExtra("PRESSED");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
@@ -51,48 +52,50 @@ public class BudgetTrackerActivity extends AppCompatActivity implements PopupMen
             }
         });
 
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress1);
+        if(pressed.equals("false")) {
+            ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress1);
 
-        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 55);
-        animation.setDuration(3500); // 3.5 second
-        animation.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 55);
+            animation.setDuration(3500); // 3.5 second
+            animation.setInterpolator(new DecelerateInterpolator());
 
-        ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
+            ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
 
-        ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 66);
-        animation2.setDuration(3500); // 3.5 second
-        animation2.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation2 = ObjectAnimator.ofInt(progressBar2, "progress", 0, 66);
+            animation2.setDuration(3500); // 3.5 second
+            animation2.setInterpolator(new DecelerateInterpolator());
 
-        ProgressBar progressBar3 = (ProgressBar) findViewById(R.id.progress3);
+            ProgressBar progressBar3 = (ProgressBar) findViewById(R.id.progress3);
 
-        ObjectAnimator animation3 = ObjectAnimator.ofInt(progressBar3, "progress", 0, 100);
-        animation3.setDuration(3500); // 3.5 second
-        animation3.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation3 = ObjectAnimator.ofInt(progressBar3, "progress", 0, 100);
+            animation3.setDuration(3500); // 3.5 second
+            animation3.setInterpolator(new DecelerateInterpolator());
 
-        ProgressBar progressBar4 = (ProgressBar) findViewById(R.id.progress4);
+            ProgressBar progressBar4 = (ProgressBar) findViewById(R.id.progress4);
 
-        ObjectAnimator animation4 = ObjectAnimator.ofInt(progressBar4, "progress", 0, 100);
-        animation4.setDuration(3500); // 3.5 second
-        animation4.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation4 = ObjectAnimator.ofInt(progressBar4, "progress", 0, 100);
+            animation4.setDuration(3500); // 3.5 second
+            animation4.setInterpolator(new DecelerateInterpolator());
 
-        ProgressBar progressBar5 = (ProgressBar) findViewById(R.id.progress5);
+            ProgressBar progressBar5 = (ProgressBar) findViewById(R.id.progress5);
 
-        ObjectAnimator animation5 = ObjectAnimator.ofInt(progressBar5, "progress", 0, 20);
-        animation5.setDuration(3500); // 3.5 second
-        animation5.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation5 = ObjectAnimator.ofInt(progressBar5, "progress", 0, 20);
+            animation5.setDuration(3500); // 3.5 second
+            animation5.setInterpolator(new DecelerateInterpolator());
 
-        ProgressBar progressBar6 = (ProgressBar) findViewById(R.id.progressBar);
+            ProgressBar progressBar6 = (ProgressBar) findViewById(R.id.progressBar);
 
-        ObjectAnimator animation6 = ObjectAnimator.ofInt(progressBar6, "progress", 0, 70);
-        animation6.setDuration(3500); // 3.5 second
-        animation6.setInterpolator(new DecelerateInterpolator());
+            ObjectAnimator animation6 = ObjectAnimator.ofInt(progressBar6, "progress", 0, 70);
+            animation6.setDuration(3500); // 3.5 second
+            animation6.setInterpolator(new DecelerateInterpolator());
 
-        animation.start();
-        animation2.start();
-        animation3.start();
-        animation4.start();
-        animation5.start();
-        animation6.start();
+            animation.start();
+            animation2.start();
+            animation3.start();
+            animation4.start();
+            animation5.start();
+            animation6.start();
+        }
     }
 
 /*    @Override
@@ -150,5 +153,14 @@ public class BudgetTrackerActivity extends AppCompatActivity implements PopupMen
                 return true;
         }
         return false;
+    }
+    public void plusButtonPressed(View view){
+        Intent intent = new Intent(getApplicationContext(), BudgetTracker2.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("USERNAME", user);
+
+        startActivity(intent);
+        overridePendingTransition (0, 0);
     }
 }

@@ -42,25 +42,31 @@
             android:name=".CalendarActivity"
             android:label="CALENDAR"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".EPaymentActivity"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".PayItForward1Activity"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MakeAPayment1Activity"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".EPaymentActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".PayItForward1Activity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MakeAPayment1Activity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".CalendarHomeActivity" />
         <activity android:name=".MakeAPaymentLastActivity" />
         <activity android:name=".PayItForwardLastActivity" />
         <activity android:name=".PaymentAlertActivity" />
         <activity android:name=".AlertSummaryActivity" />
-        <activity android:name=".BudgetBuilderActivity"
-            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".BudgetBuilderActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".MoneyManagementHomeActivity" />
         <activity android:name=".DeleteBudgetActivity" />
         <activity android:name=".MonthlySpending1Activity" />
         <activity android:name=".BudgetTrackerActivity" />
-        <activity android:name=".CityAssistanceActivity"
+        <activity
+            android:name=".CityAssistanceActivity"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".BudgetTracker2"></activity>
     </application>
 
 </manifest>

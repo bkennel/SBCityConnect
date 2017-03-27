@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@android:style/Theme.Translucent"
     android:id="@+id/activity_budget_tracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -49,14 +50,22 @@
         </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:indeterminate="false"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="-50dp"
         android:progressDrawable="@drawable/tracker_progress_circle"
         android:background="@drawable/tracker_circle"
         style="?android:attr/progressBarStyleHorizontal"
@@ -156,8 +165,8 @@
     <Button
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:text="+"
-        android:textSize="11dp"
+        android:text="-"
+        android:textSize="14dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/progress1"
         android:layout_marginLeft="-30dp"
@@ -165,7 +174,7 @@
         android:layout_below="@id/greenIcon"
         android:background="@android:color/transparent"
         android:id="@+id/plus1"
-        android:onClick="plusButtonPressed"
+        android:onClick="minusButtonPressed"
         />
 
     <View
@@ -181,18 +190,18 @@
         />
 
     <TextView
-    android:layout_width="40dp"
-    android:layout_height="10dp"
-    android:layout_below="@+id/greenIcon"
-    android:layout_alignLeft="@+id/line1"
-    android:layout_marginLeft="25dp"
-    android:textSize="9dp"
-    android:text="FOOD"
-    android:textStyle="bold"
-    android:textColor="@color/colorDarkGray"
-    android:layout_marginTop="15dp"
-    android:id="@+id/food"
-    />
+        android:layout_width="40dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/greenIcon"
+        android:layout_alignLeft="@+id/line1"
+        android:layout_marginLeft="25dp"
+        android:textSize="9dp"
+        android:text="FOOD"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGray"
+        android:layout_marginTop="15dp"
+        android:id="@+id/food"
+        />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="10dp"
@@ -220,9 +229,131 @@
     <ProgressBar
         android:layout_width="190dp"
         android:layout_height="20dp"
-        android:progress="66"
+        android:progress="55"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/progress1"
+        android:layout_marginTop="20dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/progress_lightgreen"
+        android:id="@+id/newProgress1"
+        />
+
+    <View
+        android:layout_width="35dp"
         android:layout_below="@id/progress1"
         android:layout_alignLeft="@id/progress1"
+        android:layout_height="1dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/subLine1"
+        />
+
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/progress1"
+        android:layout_alignLeft="@+id/line1"
+        android:layout_marginLeft="25dp"
+        android:textSize="9dp"
+        android:text="GROCERIES"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGray"
+        android:layout_marginTop="15dp"
+        android:id="@+id/groceries"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/groceries"
+        android:layout_alignLeft="@id/groceries"
+        android:textSize="9dp"
+        android:text="$50.00 LEFT"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGreen"
+        android:id="@+id/grocAmount"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/grocAmount"
+        android:layout_alignLeft="@id/grocAmount"
+        android:textSize="9dp"
+        android:text="$350.00 BUDGET"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightGray"
+        android:id="@+id/grocBudget"
+        />
+
+    <ProgressBar
+        android:layout_width="190dp"
+        android:layout_height="20dp"
+        android:progress="55"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/newProgress1"
+        android:layout_marginTop="20dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/progress_lightgreen"
+        android:id="@+id/newProgress2"
+        />
+
+    <View
+        android:layout_width="35dp"
+        android:layout_below="@id/newProgress1"
+        android:layout_alignLeft="@id/newProgress1"
+        android:layout_height="1dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="30dp"
+        android:rotation="90"
+        android:background="@color/colorLightGray"
+        android:id="@+id/subLine2"
+        />
+
+    <TextView
+        android:layout_width="90dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/newProgress1"
+        android:layout_alignLeft="@+id/line1"
+        android:layout_marginLeft="25dp"
+        android:textSize="9dp"
+        android:text="RESTAURANTS"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGray"
+        android:layout_marginTop="15dp"
+        android:id="@+id/rest"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/rest"
+        android:layout_alignLeft="@id/rest"
+        android:textSize="9dp"
+        android:text="$50.00 LEFT"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGreen"
+        android:id="@+id/restAmount"
+        />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/restAmount"
+        android:layout_alignLeft="@id/restAmount"
+        android:textSize="9dp"
+        android:text="$150.00 BUDGET"
+        android:textStyle="bold"
+        android:textColor="@color/colorLightGray"
+        android:id="@+id/restBudget"
+        />
+
+    <ProgressBar
+        android:layout_width="190dp"
+        android:layout_height="20dp"
+        android:progress="66"
+        android:layout_below="@id/newProgress2"
+        android:layout_alignLeft="@id/newProgress2"
         android:layout_marginTop="20dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/progress_rectangle"
@@ -236,7 +367,7 @@
         android:textSize="11dp"
         android:textColor="@color/colorDarkGray"
         android:layout_alignLeft="@id/plus1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_below="@id/plus1"
         android:background="@android:color/transparent"
         android:id="@+id/plus2"
@@ -244,7 +375,7 @@
 
     <View
         android:layout_width="35dp"
-        android:layout_below="@id/line1"
+        android:layout_below="@id/subLine2"
         android:layout_alignLeft="@id/line1"
         android:layout_height="1dp"
         android:layout_marginTop="40dp"
@@ -256,8 +387,8 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="10dp"
-        android:layout_below="@id/food"
-        android:layout_alignLeft="@id/food"
+        android:layout_below="@id/rest"
+        android:layout_alignLeft="@id/groceries"
         android:textSize="9dp"
         android:text="UTILITIES"
         android:textStyle="bold"
@@ -513,5 +644,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="43dp" />
-
+    </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
