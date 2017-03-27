@@ -40,7 +40,7 @@ public class MonthlySpending1Activity extends AppCompatActivity implements Popup
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
 
@@ -52,17 +52,10 @@ public class MonthlySpending1Activity extends AppCompatActivity implements Popup
         animation.start();
     }
 
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.toolbar_menu, menu);
-        return true;
-    }*/
 
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
             case R.id.life:
-                //TODO - implement submenu
                 return true;
             case R.id.calendar:
                 Intent intent = new Intent(this, CalendarActivity.class);

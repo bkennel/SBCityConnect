@@ -3,6 +3,7 @@ package mobilend.sbcityconnect;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,6 +49,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
+        final int color=((ColorDrawable) toolbar.getBackground()).getColor();
 
         menuButton = (ImageButton) findViewById(R.id.menuButton);
         menuButton.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +60,7 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
                 final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
                 final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 menuWindow.setUser(user);
+                menuWindow.setBackgroundColor(color);
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
@@ -200,7 +203,6 @@ public class CityAssistanceActivity extends AppCompatActivity implements PopupMe
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.life:
-                //TODO - implement submenu
                 Toast.makeText(this, "Life", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.calendar:

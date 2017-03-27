@@ -34,7 +34,7 @@ public class MakeAPaymentLastActivity extends AppCompatActivity implements Popup
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
     }
@@ -42,7 +42,6 @@ public class MakeAPaymentLastActivity extends AppCompatActivity implements Popup
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
             case R.id.life:
-                //TODO - implement submenu
                 return true;
             case R.id.calendar:
                 Intent intent = new Intent(this, CalendarActivity.class);

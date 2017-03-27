@@ -59,12 +59,6 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*PopupMenu popup = new PopupMenu(CalendarHomeActivity.this, menuButton);
-                popup.setOnMenuItemClickListener(CalendarHomeActivity.this);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.show();*/
-
-
                 /*final PopupWindow menuWindow=new PopupWindow(menuView,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
 
                 expListView=(ExpandableListView) menuView.findViewById(R.id.dropdown);
@@ -90,7 +84,7 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
 
@@ -164,7 +158,6 @@ public class CalendarHomeActivity extends AppCompatActivity implements PopupMenu
     public boolean onMenuItemClick(MenuItem item){
         switch(item.getItemId()){
             case R.id.life:
-                //TODO - implement submenu
                 return true;
             case R.id.calendar:
                 Intent intent = new Intent(this, CalendarActivity.class);

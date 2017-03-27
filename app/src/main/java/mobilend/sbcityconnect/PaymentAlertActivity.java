@@ -39,7 +39,7 @@ public class PaymentAlertActivity extends AppCompatActivity implements PopupMenu
 
                 menuWindow.setFocusable(true);
                 menuWindow.update();
-                menuWindow.showAsDropDown(menuButton);
+                menuWindow.showAsDropDown(menuButton,-50,0);
             }
         });
 
@@ -48,7 +48,6 @@ public class PaymentAlertActivity extends AppCompatActivity implements PopupMenu
     public boolean onMenuItemClick(MenuItem item) {
         switch(item.getItemId()){
             case R.id.life:
-                //TODO - implement submenu
                 return true;
             case R.id.calendar:
                 Intent intent = new Intent(this, CalendarActivity.class);

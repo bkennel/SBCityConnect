@@ -1,10 +1,12 @@
 package mobilend.sbcityconnect;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class DropdownMenu extends PopupWindow {
     private HashMap<String, List<String>> child2List;
 
     private Activity host;
+    private View parentView;
     private String user;
 
     //final PopupWindow menuWindow=new PopupWindow(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -32,6 +35,7 @@ public class DropdownMenu extends PopupWindow {
     public DropdownMenu(final View contentView, int width, int height){
         super(contentView,width,height);
         host=(Activity) contentView.getContext();
+        parentView=contentView;
 
         expListView=(ExpandableListView) contentView.findViewById(R.id.dropdown);
         prepareListData();
@@ -58,6 +62,11 @@ public class DropdownMenu extends PopupWindow {
 
     public void setUser(String name){
         this.user=name;
+    }
+
+    public void setBackgroundColor(int color){
+        LinearLayout layout=(LinearLayout) parentView.findViewById(R.id.menuLayout);
+        layout.setBackgroundColor(color);
     }
 
     private void prepareListData(){
