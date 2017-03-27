@@ -1,6 +1,8 @@
 package mobilend.sbcityconnect;
 
         import android.content.Intent;
+        import android.graphics.Color;
+        import android.graphics.drawable.ColorDrawable;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.support.v7.widget.Toolbar;
@@ -31,13 +33,14 @@ public class PaymentAlertActivity extends AppCompatActivity implements PopupMenu
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Add these seven lines inside OnClickListener for menuButton in each activity
                 LayoutInflater inflater=(LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
                 final View menuView=inflater.inflate(R.layout.dropdown_menu,null);
                 final DropdownMenu menuWindow=new DropdownMenu(menuView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 menuWindow.setUser(user);
 
+                menuWindow.setOutsideTouchable(true);
                 menuWindow.setFocusable(true);
+                menuWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 menuWindow.update();
                 menuWindow.showAsDropDown(menuButton,-50,0);
             }
